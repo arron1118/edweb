@@ -9,7 +9,7 @@ use app\common\controller\PortalController;
 
 class Cases extends PortalController
 {
-    protected string $title = '案例';
+    protected string $title = '案例鉴赏';
 
     protected $limit = 2;
 

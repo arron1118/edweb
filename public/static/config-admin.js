@@ -4,7 +4,7 @@ require.config({
     urlArgs: "v=" + CONFIG.VERSION,
     baseUrl: BASE_URL,
     paths: {
-        "jquery": ["plugs/jquery-3.4.1/jquery-3.4.1.min"],
+        "jquery": ["plugs/jquery-3.5.1/jquery.min"],
         "jquery-particleground": ["plugs/jq-module/jquery.particleground.min"],
         "echarts": ["plugs/echarts/dist/echarts.min"],
         "echarts-theme": ["plugs/echarts/theme/shine"],

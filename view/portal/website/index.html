@@ -1,0 +1,80 @@
+{extend name="public/index" /}
+
+{block name="main"}
+<div class="banner wow fadeIn">
+    <img src="__STATIC__/portal/imgs/banner/website.png" alt="Logo" class="img-fluid">
+</div>
+<div class="container mb-5 pb-5">
+    <div class="module2-title my-5 text-center fs-1">定制网站类型</div>
+    <div class="row row-cols-1 row-cols-lg-2  align-items-center bgc-f7 mb-5 web-active">
+        <div class="col p-0">
+            <img src="__STATIC__/portal/imgs/w1.png" alt="" class="img-fluid">
+        </div>
+        <div class="col px-4">
+            <h3 class="fs-4 my-3 mb-lg-5">企业官方网站</h3>
+            <div class="c-6e fs-18">通过企业文化及行业调研，订制属于企业的官方形象，十足的UI创意、尖端的制作技术及细节刻画提升，帮助企业在互联网上华丽转身。同时更为企业在线管理、信息发布打造便捷工具。</div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-2 align-items-center bgc-f7 mb-5 web-active">
+        <div class="col p-0">
+            <img src="__STATIC__/portal/imgs/w2.png" alt="" class="img-fluid">
+        </div>
+        <div class="col px-4">
+            <h3 class="fs-4 my-3 mb-lg-5">品牌网站</h3>
+            <div class="c-6e fs-18">品牌网站旨在提供有关该品牌、产品、服务和价值观的信息。品牌网站在今天的商业环境中扮演着非常重要的角色。随着人们越来越倾向于在互联网上进行购物和搜索信息，通过一个有吸引力和易于使用的品牌网站，公司可以向全球范围内的潜在客户展示其产品和服务的特点和优势，从而扩大其市场份额和提高收入。</div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-2 align-items-center bgc-f7 mb-5 web-active">
+        <div class="col p-0">
+            <img src="__STATIC__/portal/imgs/w3.png" alt="" class="img-fluid">
+        </div>
+        <div class="col px-4">
+            <h3 class="fs-4 my-3 mb-lg-5">电子商务网站</h3>
+            <div class="c-6e fs-18">通过企业文化及行业调研，订制属于企业的官方形象，十足的UI创意、尖端的制作技术及细节刻画提升，帮助企业在互联网上华丽转身。同时更为企业在线管理、信息发布打造便捷工具。</div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-2 align-items-center bgc-f7 mb-5 web-active">
+        <div class="col p-0">
+            <img src="__STATIC__/portal/imgs/w4.png" alt="" class="img-fluid">
+        </div>
+        <div class="col px-4">
+            <h3 class="fs-4 my-3 mb-lg-5">外贸网站</h3>
+            <div class="c-6e fs-18">电子商务（B2C、C2C、O2O）将传统的商务流程电子化、数字化，帮您实现运行成本降低化、效率提升化。我们丰富的电子商务建站经验，从大众网购使用习惯及消费者网购心理分析等，订制您的网上商务平台</div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-2 align-items-center bgc-f7 mb-5 web-active">
+        <div class="col p-0">
+            <img src="__STATIC__/portal/imgs/w5.png" alt="" class="img-fluid">
+        </div>
+        <div class="col px-4">
+            <h3 class="fs-4 my-3 mb-lg-5">政府学校网站</h3>
+            <div class="c-6e fs-18">针对学校、政府或事业单位的“对外宣传网站”及“内部管理站”等，严谨的网页制作风格、深化的UI设计，成熟的建站技术，保证网站在线维护通畅便捷性与安全性。</div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-2 align-items-center bgc-f7 mb-5 web-active">
+        <div class="col p-0">
+            <img src="__STATIC__/portal/imgs/w6.png" alt="" class="img-fluid">
+        </div>
+        <div class="col px-4">
+            <h3 class="fs-4 my-3 mb-lg-5">门户网站</h3>
+            <div class="c-6e fs-18">让门户网站资源利用化，无缝集成旗下各种服务，框架清晰，贴合行业规范及需求，使得门户网站实现在线活跃性。同时提高门户网站整体框架，使企业门户平台运行通畅无阻。</div>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="script"}
+<script>
+    //btn
+    $('.web-active').hover(function () {
+            $(this).addClass('cursor bgc-27').removeClass('bgc-f7');
+            $(this).find('h3').addClass('c-fff')
+        },
+        function () {
+            $(this).removeClass('cursor bgc-27').addClass('bgc-f7');
+            $(this).find('h3').removeClass('c-fff')
+
+        },
+    )
+</script>
+{/block}

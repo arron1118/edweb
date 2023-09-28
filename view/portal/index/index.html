@@ -1,494 +1,385 @@
-<!DOCTYPE html>
-<html lang="en">
+{extend name="public/index" /}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="{$keyword|default=''}" />
-    <meta name="description" content="{$description|default=''}" />
-    <title>易点咨询 - {$title}</title>
-    {include file="public/meta" /}
-</head>
-<body>
-<div style="position: relative; min-height: 68px;">
-    <!--    导航栏开始-->
-    <header class="navbar  navbar-expand-lg navbar-dark bd-navbar sticky-top" style="padding-bottom: 60px;position: absolute; top: 0;">
-        <nav class="navbar bg-dark fixed-top">
-<!--            home-top-->
-            <div class="container home-toggler">
-                <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
-                    <img src="{:sysconfig('site','home_logo_image')}" alt="Logo" class="img-fluid">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header bg-dark">
-                        <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
-                            <img src="{:sysconfig('site','home_logo_image')}" alt="Logo" class="img-fluid">
-                        </a>
-                        <button type="button" class="btn-close bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body home-header-color">
-                        <ul class="navbar-nav justify-content-around flex-grow-1 px-5">
-                            <li class="nav-item">
-                                <a href="/index.html" class="nav-link {if ($controller === 'index')}active{/if}" aria-current="page">首页</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/service.html" class="nav-link {if ($controller === 'service')}active{/if}">服务</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/cases.html" class="nav-link {if ($controller === 'cases')}active{/if}">案例</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/share.html" class="nav-link {if ($controller === 'share')}active{/if}">分享</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/about.html" class="nav-link {if ($controller === 'about')}active{/if}">我们</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/contact.html" class="nav-link {if ($controller === 'contact')}active{/if}">联系</a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!--导航栏结束-->
-    <!--轮播图-->
-    {if $carousel}
-    <div id="carouselExampleCaptions" class="carousel slide home-banner wow fadeIn" data-bs-ride="carousel" style="margin-top: 68px;">
-        <div class="carousel-inner">
-            {foreach $carousel as $key => $val}
-            <div class="carousel-item {if $key === 0}active{/if}">
-                <img src="{$val.img}" class="d-block w-100 h-auto" alt="" style=" max-height: 1095px">
-            </div>
-            {/foreach}
-        </div>
-        <div class="carousel-indicators">
-            {foreach $carousel as $key => $val}
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{$key}" class="{if $key === 0}active{/if}"></button>
-            {/foreach}
-        </div>
-
-    </div>
-    {/if}
-    <!--轮播图-->
+{block name="main"}
+<div class="banner wow fadeIn">
+    <img src="__STATIC__/portal/imgs/banner/home.png" alt="Logo" class="img-fluid">
 </div>
-<div class="module-1">
-    <div class="container mb-5">
-        <div class="module-title my-5 text-center">企业为什么要布局短视频平台？</div>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 text-center wow slideInLeft">
-                <img src="__STATIC__/portal/imgs/dy/d1.png" alt="" class="img-fluid">
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 dy-content wow slideInRight">
-                <ul>
-                    <li>1.新媒体流量流行的时代。短视频变得越来越强大。</li>
-                    <li>2.很多企业产品单一，成本高，线下流通率低。</li>
-                    <li>3.企业做短视频营销能够最大程度的出现在用户眼前。</li>
-                    <li>4.短视频营销更生动，更吸引眼球。</li>
-                    <li>5.从视频行业的角度来看，短视频的商业价值是不可估量的。</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="row text-center m-0" style="background-color: #f8f8f8;">
-        <div class="col-lg-3 col-md-6 col-sm-12 col-number">
-            <div class="py-5 border-end">
-                <div style="color: #cc0033; font-size: 36px;padding: 20px 0;" ><span class="number" data-count="8"></span><span>亿</span></div>
-                <div style="color: #030303; font-size: 18px;padding-bottom: 20px;">日均活跃用户</div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="py-5 border-end">
-                <div style="color: #cc0033; font-size: 36px;padding: 20px 0;" ><span class="number" data-count="6"></span><span>亿</span></div>
-                <div style="color: #030303; font-size: 18px;padding-bottom: 20px;">日均视频搜索用户</div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="py-5 border-end">
-                <div style="color: #cc0033; font-size: 36px;padding: 20px 0;" ><span class="number" data-count="9000"></span><span>亿</span></div>
-                <div style="color: #030303; font-size: 18px;padding-bottom: 20px;">视频日均播放量</div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="py-5">
-                <div style="color: #cc0033; font-size: 36px;padding: 20px 0;" ><span class="number" data-count="3000"></span><span>W</span></div>
-                <div style="color: #030303; font-size: 18px;padding-bottom: 20px;">内容创作者</div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="module-2">
-    <div class="container mb-5">
-        <div class="module-title my-5 text-center">我们可以为你做什么？</div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card dy-card shadow text-center wow fadeIn" data-wow-delay="0">
-                    <div class="m-3" style="height: 63px">
-                        <img class="img-fluid" src="__STATIC__/portal/imgs/dy/c1.png" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="dy-card-title mb-4">账号定位</h4>
-                        <div class="dy-card content">
-                            <Ul>
-                                <li>根据您的需求，专业策划账号</li>
-                            </Ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card dy-card shadow text-center wow fadeIn"  data-wow-delay="0.1s">
-                    <div class="m-3" style="height: 63px"><img class="img-fluid" src="__STATIC__/portal/imgs/dy/c2.png" alt=""></div>
-                    <div class="card-body">
-                        <h4 class="dy-card-title mb-4">文案策划</h4>
-                        <div class="dy-card content">
-                            <Ul>
-                                <li>结合企业/产品，确定账号内容方向</li>
-                            </Ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card dy-card shadow  text-center wow fadeIn" data-wow-delay="0.2s">
-                    <div class="m-3" style="height: 63px"><img class="img-fluid" src="__STATIC__/portal/imgs/dy/c3.png" alt=""></div>
-                    <div class="card-body">
-                        <h4 class="dy-card-title mb-4">IP打造</h4>
-                        <div class="dy-card content">
-                            <Ul>
-                                <li>根据内容方向，打造独特人设和账号定位</li>
-                            </Ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card dy-card shadow text-center wow fadeIn" data-wow-delay="0.3s">
-                    <div class="m-3" style="height: 63px"><img class="img-fluid" src="__STATIC__/portal/imgs/dy/c4.png" alt=""></div>
-                    <div class="card-body">
-                        <h4 class="dy-card-title mb-4">拍摄制作</h4>
-                        <div class="dy-card content">
-                            <Ul>
-                                <li>创意文案、短视频拍摄、剪辑，后期</li>
-                            </Ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card dy-card shadow text-center wow fadeIn" data-wow-delay="0.4s">
-                    <div class="m-3" style="height: 63px"><img class="img-fluid" src="__STATIC__/portal/imgs/dy/c5.png" alt=""></div>
-                    <div class="card-body">
-                        <h4 class="dy-card-title mb-4">数据分析</h4>
-                        <div class="dy-card content">
-                            <Ul>
-                                <li>账号运营情况分析、优化</li>
-                            </Ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card dy-card shadow  text-center wow fadeIn"  data-wow-delay="0.5s">
-                    <div class="m-3" style="height: 63px"><img class="img-fluid" src="__STATIC__/portal/imgs/dy/c6.png" alt=""></div>
-                    <div class="card-body ">
-                        <h4 class="dy-card-title mb-4">运营维护</h4>
-                        <div class="dy-card content">
-                            <Ul>
-                                <li>粉丝互动、转化，账号形象、主页设计</li>
-                            </Ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div style="border-bottom: 2px solid #d8d7dd;">
+
     <div class="container">
-        <div class="row pb-5 text-center">
-            <div class="col-lg-6 offset-lg-3 col-sm-12 offset-sm-0">
-                <a target="_blank" href="https://affim.baidu.com/cps5/chatIndex?siteToken=9daf51d8119752b1ff8efd4b843b0008&speedLogId=167945260881919c4_1679452608819_02838&bid=167945142915377368&eid=44257984&reqParam=%7B%22from%22%3A0,%22sid%22%3A%22-100%22,%22tid%22%3A%22-1%22,%22ttype%22%3A1,%22siteId%22%3A%2218901235%22,%22userId%22%3A%2244257984%22,%22pageId%22%3A0%7D" class="free-btn">
-                    <div style="background: url('__STATIC__/portal/imgs/手指.png') center right no-repeat; background-size: 40px 40px;background-position-x: 80%;">
-                        <span class="me-3" style="font-weight: 900">免费获取</span>短视频运营方案
+        <div class="row row-cols-2 row-cols-lg-4 py-3 g-4 g-lg-0">
+            <div class="col">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <img src="__STATIC__/portal/imgs/icon/home-1.png" alt="" class="img-fluid" style="max-height: 31px;">
                     </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="dy-step text-center">
-        <div class="dy-step-title py-5"><span>一站式短视频代运营服务</span><span>用营销助力企业</span> </div>
-        <div class="container">
-        <div class="row mb-5">
-            <div class="col-lg-3 col-md-6 col-sm-12 p-0">
-                <div class="d-flex justify-content-around align-items-center wow fadeIn" data-wow-delay="0">
-                    <div class="right-number">01</div>
-                    <div class="">
-                        <div class="dy-step-list-title">独立短视频账号</div>
-                        <div class="dy-step-list-description">布局短视频流量风口</div></div>
-                    <div class="right-jiantou"></div>
-                </div>
-                </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 p-0">
-                <div class="d-flex justify-content-around align-items-center wow fadeIn" data-wow-delay="0.1s">
-                    <div class="right-number">02</div>
-                    <div class="">
-                        <div class="dy-step-list-title">企业蓝V认证</div>
-                        <div class="dy-step-list-description">企业认证账号</div></div>
-                    <div class="right-jiantou"></div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 p-0">
-                <div class="d-flex justify-content-around align-items-center wow fadeIn" data-wow-delay="0.2s">
-                    <div class="right-number">03</div>
-                    <div class="">
-                        <div class="dy-step-list-title">短视频拍摄</div>
-                        <div class="dy-step-list-description">创意文案、拍摄、剪辑</div></div>
-                    <div class="right-jiantou"></div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 p-0">
-                <div class="d-flex justify-content-around align-items-center wow fadeIn" data-wow-delay="0.3s">
-                    <div class="right-number">04</div>
-                    <div class="">
-                        <div class="dy-step-list-title">短视频SEO</div>
-                        <div class="dy-step-list-description">布局短视频关键词排名</div></div>
-                    <div class="right-jiantou"></div>
-                </div>
-            </div>
-            </div>
-            <div class="row mb-5">
-                <div class="col-lg-3 col-md-6 col-sm-12 p-0">
-                    <div class="d-flex justify-content-around align-items-center wow fadeIn" data-wow-delay="0.4s">
-                        <div class="right-number">05</div>
-                        <div class="">
-                            <div class="dy-step-list-title">开通商业服务</div>
-                            <div class="dy-step-list-description">展示企业产品和服务</div></div>
-                        <div class="right-jiantou"></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 p-0">
-                    <div class="d-flex justify-content-around align-items-center wow fadeIn" data-wow-delay="0.5s">
-                        <div class="right-number">06</div>
-                        <div class="">
-                            <div class="dy-step-list-title">短视频直播</div>
-                            <div class="dy-step-list-description">短视频直播卖货</div></div>
-                        <div class="right-jiantou"></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 p-0">
-                    <div class="d-flex justify-content-around align-items-center wow fadeIn" data-wow-delay="0.6s">
-                        <div class="right-number">07</div>
-                        <div class="">
-                            <div class="dy-step-list-title">流量转化变现</div>
-                            <div class="dy-step-list-description">关键词排名、客户咨询</div></div>
-                        <div class="right-jiantou"></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 p-0">
-                    <div class="d-flex justify-content-around align-items-center wow fadeIn" data-wow-delay="0.7s">
-                        <div class="right-number">08</div>
-                        <div class="">
-                            <div class="dy-step-list-title">粉丝加微信</div>
-                            <div class="dy-step-list-description">转化为私域客户</div></div>
-                        <div class="right-jiantou"></div>
+                    <div class="col-9">
+                        <div class="d-flex c-007 fs-3"><div class="number" data-count="12">12</div><span>年</span></div>
+                        <div class="fs-6 c-58">互联网营销经验</div>
                     </div>
                 </div>
             </div>
-            <div class="row pb-5 text-center">
-                <div class="col-lg-6 offset-lg-3 col-sm-12 offset-sm-0">
-                    <a target="_blank" href="https://affim.baidu.com/cps5/chatIndex?siteToken=9daf51d8119752b1ff8efd4b843b0008&speedLogId=167945260881919c4_1679452608819_02838&bid=167945142915377368&eid=44257984&reqParam=%7B%22from%22%3A0,%22sid%22%3A%22-100%22,%22tid%22%3A%22-1%22,%22ttype%22%3A1,%22siteId%22%3A%2218901235%22,%22userId%22%3A%2244257984%22,%22pageId%22%3A0%7D" class="free-btn">
-                        <div style="background: url('__STATIC__/portal/imgs/手指.png') center right no-repeat; background-size: 40px 40px;background-position-x: 80%;">
-                            <span class="me-3" style="font-weight: 900">免费获取</span>短视频运营方案
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
-</div>
-<div class="module-3">
-    <div class="module-1 container">
-        <div class="module-title my-5 text-center">我们的服务</div>
-        <div class="row mb-5">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card server-card shadow wow fadeIn" data-wow-delay="0">
-                    <div class="text-center mt-3"><img class="img-fluid" src="__STATIC__/portal/imgs/fw/s1.png" alt="">
+            <div class="col">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <img src="__STATIC__/portal/imgs/icon/home-2.png" alt="" class="img-fluid" style="max-height: 31px;">
                     </div>
-                    <div class="card-body">
-                        <h4 class="server-card-title mb-4 text-center">短视频推广</h4>
-                        <div class="server-card-content px-2">
-                            <Ul>
-                                <li>账号搭建</li>
-                                <li>视频内容策划</li>
-                                <li>上门拍摄</li>
-                                <li>包装剪辑</li>
-                                <li>视频配音</li>
-                                <li>后期处理</li>
-                            </Ul>
-                        </div>
+                    <div class="col-9">
+                        <div class="d-flex c-007 fs-3"><div class="number" data-count="5000">5000</div><span>+</span></div>
+                        <div class="fs-6 c-58">合作客户案例</div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card server-card shadow wow fadeIn" data-wow-delay="0.1s">
-                    <div class="text-center mt-3"><img class="img-fluid" src="__STATIC__/portal/imgs/fw/s2.png" alt="">
+            <div class="col">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <img src="__STATIC__/portal/imgs/icon/home-3.png" alt="" class="img-fluid" style="max-height: 31px;">
                     </div>
-                    <div class="card-body">
-                        <h4 class="server-card-title mb-4  text-center">短视频代运营</h4>
-                        <div class="server-card-content">
-
-                            <Ul>
-                                <li>账号策划</li>
-                                <li>企业IP定位</li>
-                                <li>创意文案</li>
-                                <li>视频拍摄制作</li>
-                                <li>数据监测</li>
-                                <li>运营数据分析</li>
-                            </Ul>
-                        </div>
+                    <div class="col-9">
+                        <div class="d-flex c-007 fs-3"><div class="number" data-count="200">200</div><span>人</span></div>
+                        <div class="fs-6 c-58">专业团队</div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card server-card shadow wow fadeIn" data-wow-delay="0.2s">
-                    <div class="text-center mt-3"><img class="img-fluid" src="__STATIC__/portal/imgs/fw/s3.png" alt="">
+            <div class="col">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <img src="__STATIC__/portal/imgs/icon/home-4.png" alt="" class="img-fluid" style="max-height: 31px;">
                     </div>
-                    <div class="card-body">
-                        <h4 class="server-card-title mb-4  text-center">广告投放</h4>
-                        <div class="server-card-content">
-
-                            <Ul>
-                                <li>Dou+推广</li>
-                                <li>信息流广告</li>
-                                <li>达人探店</li>
-                                <li>抖音开屏广告</li>
-                                <li>直播间广告</li>
-                                <li>小红书广告</li>
-                                <li>抖音关键字排名</li>
-                            </Ul>
-
-                        </div>
+                    <div class="col-9">
+                        <div class="c-007 fs-2">一对一</div>
+                        <div class="fs-6 c-58">专业顾问定制方案</div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card server-card shadow wow fadeIn" data-wow-delay="0.3s">
-                    <div class="text-center mt-3"><img class="img-fluid" src="__STATIC__/portal/imgs/fw/s4.png" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="server-card-title mb-4 text-center">拍摄剪辑</h4>
-                        <div class="server-card-content">
-                            <Ul>
-                                <li>产品视频</li>
-                                <li>种草视频</li>
-                                <li>企业宣传片</li>
-                                <li>剧情短视频</li>
-                                <li>个人IP视频</li>
-                                <li>模特口播视频</li>
-                                <li>信息流视频</li>
-                                <li>高端TCT</li>
-                            </Ul>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row pb-5 text-center">
-                <div class="col-lg-6 offset-lg-3 col-sm-12 offset-sm-0">
-                    <a target="_blank" href="https://affim.baidu.com/cps5/chatIndex?siteToken=9daf51d8119752b1ff8efd4b843b0008&speedLogId=167945260881919c4_1679452608819_02838&bid=167945142915377368&eid=44257984&reqParam=%7B%22from%22%3A0,%22sid%22%3A%22-100%22,%22tid%22%3A%22-1%22,%22ttype%22%3A1,%22siteId%22%3A%2218901235%22,%22userId%22%3A%2244257984%22,%22pageId%22%3A0%7D" class="free-btn">
-                        <div style="background: url('__STATIC__/portal/imgs/手指.png') center right no-repeat; background-size: 40px 40px;background-position-x: 80%;">
-                            <span class="me-3" style="font-weight: 900">免费获取</span>短视频运营方案
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="module-4">
+<div class="container">
+    <div class="fs-1 py-lg-3 my-5 text-center">我们的服务</div>
+    <div class="row row-cols-1 row-cols-lg-3 gx-5 gy-3 gy-lg-5 serve-active-father">
+        <div class="col">
+            <div class="h-100 wow fadeInUp cursor" data-wow-delay="0.1s"
+                 style="background-image: url('__STATIC__/portal/imgs/icon/home-we-bg1.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+                <div class="pt-5 serve-active" style="height: 232px;">
+                    <h4 class="server-card-title text-center py-4 mb-0 fs-2 c-fff"><img
+                            src="__STATIC__/portal/imgs/icon/home-we1.png" alt="" class="img-fluid" style="max-height: 55px;"></h4>
+                    <div class="server-card-content text-center pb-5">
+                        <ul class="m-0">
+                            <li class="mb-2">短视频代运营</li>
+
+                        </Ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col">
+
+            <div class="h-100 wow fadeInUp cursor" data-wow-delay="0.1s"
+                 style="background-image: url('__STATIC__/portal/imgs/icon/home-we-bg2.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+                <div class="pt-5 serve-active" style="height: 232px;">
+                    <h4 class="server-card-title text-center py-4 mb-0 fs-2 c-fff"><img
+                            src="__STATIC__/portal/imgs/icon/home-we2.png" alt="" class="img-fluid" style="max-height: 55px;"></h4>
+                    <div class="server-card-content text-center pb-5">
+                        <ul class="m-0">
+                            <li class="mb-2">新媒体营销</li>
+
+                        </Ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col">
+
+            <div class="h-100 wow fadeInUp cursor" data-wow-delay="0.1s"
+                 style="background-image: url('__STATIC__/portal/imgs/icon/home-we-bg3.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+                <div class="pt-5 serve-active" style="height: 232px;">
+                    <h4 class="server-card-title text-center py-4 mb-0 fs-2 c-fff"><img
+                            src="__STATIC__/portal/imgs/icon/home-we3.png" alt="" class="img-fluid" style="max-height: 55px;"></h4>
+                    <div class="server-card-content text-center pb-5">
+                        <ul class="m-0">
+                            <li class="mb-2">品牌营销推广</li>
+
+                        </Ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="h-100 wow fadeInUp cursor" data-wow-delay="0.2s"
+                 style="background-image: url('__STATIC__/portal/imgs/icon/home-we-bg4.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+                <div class="pt-5 serve-active" style="height: 232px;">
+                    <h4 class="server-card-title text-center py-4 mb-0 fs-2 c-fff"><img
+                            src="__STATIC__/portal/imgs/icon/home-we4.png" alt="" class="img-fluid" style="max-height: 55px;"></h4>
+                    <div class="server-card-content text-center pb-5">
+                        <ul class="m-0">
+                            <li class="mb-2">个人IP打造</li>
+                        </Ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="h-100 wow fadeInUp cursor" data-wow-delay="0.2s"
+                 style="background-image: url('__STATIC__/portal/imgs/icon/home-we-bg5.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+                <div class="pt-5 serve-active" style="height: 232px;">
+                    <h4 class="server-card-title text-center py-4 mb-0 fs-2 c-fff"><img
+                            src="__STATIC__/portal/imgs/icon/home-we5.png" alt="" class="img-fluid" style="max-height: 55px;"></h4>
+                    <div class="server-card-content text-center pb-5">
+                        <ul class="m-0">
+                            <li class="mb-2">达人探店</li>
+                        </Ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="h-100 wow fadeInUp cursor" data-wow-delay="0.2s"
+                 style="background-image: url('__STATIC__/portal/imgs/icon/home-we-bg6.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+                <div class="pt-5 serve-active" style="height: 232px;">
+                    <h4 class="server-card-title text-center py-4 mb-0 fs-2 c-fff"><img
+                            src="__STATIC__/portal/imgs/icon/home-we6.png" alt="" class="img-fluid" style="max-height: 55px;"></h4>
+                    <div class="server-card-content text-center pb-5">
+                        <ul class="m-0">
+                            <li class="mb-2">网站建设</li>
+                        </Ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="4 bgc-f5 py-5 mt-5">
     <div class="container">
-        <div class="module-title my-5 text-center" data-wow-delay="0.1s">运营案例</div>
-        <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3  align-items-center">
-            {foreach ($cases as $key => $val)}
-            <div class="col p-0 m-0 case-list wow fadeIn d-flex justify-content-center align-items-center" style="" {if ($key % 2 === 0)}data-wow-delay="0.6s"{else}data-wow-delay="0.3s"{/if}>
-                <a href="{:url('/cases/info', ['id' => $val['id']])}" title="{$val.title}" target="_blank" class="p-0 text-center">
-                    <img src="{$val.cover_img|default='static/common/images/nopic.jpg'}" alt="{$val.title}" class="img-fluid w-100" style="max-height: 300px;" />
-                </a>
+        <div class="fs-1 mb-5 text-center">易点核心优势</div>
+        <div class="row row-cols-1 row-cols-lg-3">
+            <div class="col">
+                <div class="px-4 py-5 server-card position-relative cursor hover-aaa wow fadeIn">
+                    <div class="mb-3 fs-64 c-d8 fw-bold">01</div>
+                    <div class="fs-18 mb-4">短视频平台算法</div>
+                    <div class="fs-14 mb-4">易点网络本身是一家从事互联网12年的企业，潜心研究抖音平台排名算法，专业的抖音代运营团队为您服务!</div>
+                    <span class="mt-5 position-absolute bottom-0 mb-5" style="width: 48px; height: 3px;"></span>
+                </div>
             </div>
-            {/foreach}
+            <div class="col">
+                <div class="p-4 py-5 server-card position-relative cursor hover-aaa wow fadeIn">
+                    <div class="mb-3 fs-64 c-d8 fw-bold">02</div>
+                    <div class="fs-18 mb-4">更懂整合营销</div>
+                    <div class="fs-14 mb-4">抖音、小红书是年轻人的时尚，是新时代的营销平台，是算法流量的渠道入口，我们，懂策划更懂线上营销!</div>
+                    <span class="mt-5 position-absolute bottom-0 mb-5" style="width: 48px; height: 3px;"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-4 py-5 server-card position-relative cursor hover-aaa wow fadeIn">
+                    <div class="mb-3 fs-64 c-d8 fw-bold">03</div>
+                    <div class=" fs-18 mb-4">更专业的团队</div>
+                    <div class=" fs-14 mb-4">团队聚合了众多影视、广告、设计、营销专业的青年才俊，可以为您提供更专业的编剧、营销策划、美术指导及拍摄剪辑服务!</div>
+                    <span class="mt-5 position-absolute bottom-0 mb-5" style="width: 48px; height: 3px;"></span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="module-5 mb-5">
-    <div class="container">
-        <div class="module-title my-5 text-center" data-wow-delay="0.1s">合作客户</div>
-        {include file="public/cooperate_customers" /}
-    </div>
-</div>
-<div class="module-6 mb-5">
-    {include file="public/about" /}
-</div>
-<div class="module-7 mb-5">
-    <div class="container">
-        <div class="module-title my-5 text-center">拍摄知识</div>
-        <div class="row">
-            {foreach ($shotTips as $key => $val)}
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card p-0 border-0 bg-transparent wow fadeIn" {if ($key % 2 === 0)} data-wow-delay="0.3s" {else} data-wow-delay="0.1s"{/if}>
-                <div class=" d-flex justify-content-center align-items-center" style="height: 300px;">
-                    <img src="{$val.cover_img|default='static/common/images/nopic.jpg'}" alt="{$val.title}" class="card-img-top img-fluid w-auto" style="max-height: 300px;">
-                </div>
-                    <div class="card-body">
-                        <div class="paishe-title mb-2 line1">
-                            <a class="stretched-link text-reset" href="{:url('/share/info', ['id' => $val.id])}" title="{$val.title}" target="_blank">
-                                {$val.title}
-                            </a>
-                        </div>
-                        <div class="paishe-content line3">
-                            {$val.description}
-                        </div>
+<div class="container">
+    <div class="3 mb-5">
+        <div class="fs-1 py-lg-3 my-5 text-center">运营案例</div>
+        <div class="row row-cols-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="case-active cursor wow fadeInUp">
+                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
+                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
+                    <div class="line2 fs-14 c-666 mb-4">
+                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
                     </div>
+                    <span class="fs-14 c-666">了解更多 +</span>
                 </div>
             </div>
-            {/foreach}
+            <div class="col">
+                <div class="case-active cursor wow fadeInUp">
+                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
+                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
+                    <div class="line2 fs-14 c-666 mb-4">
+                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
+                    </div>
+                    <span class="fs-14 c-666">了解更多 +</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="case-active cursor wow fadeInUp">
+                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
+                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
+                    <div class="line2 fs-14 c-666 mb-4">
+                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
+                    </div>
+                    <span class="fs-14 c-666">了解更多 +</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="case-active cursor wow fadeInUp">
+                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
+                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
+                    <div class="line2 fs-14 c-666 mb-4">
+                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
+                    </div>
+                    <span class="fs-14 c-666">了解更多 +</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="case-active cursor wow fadeInUp">
+                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
+                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
+                    <div class="line2 fs-14 c-666 mb-4">
+                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
+                    </div>
+                    <span class="fs-14 c-666">了解更多 +</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="case-active cursor wow fadeInUp">
+                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
+                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
+                    <div class="line2 fs-14 c-666 mb-4">
+                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
+                    </div>
+                    <span class="fs-14 c-666">了解更多 +</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<div class="4 pb-5 pt-lg-3 bgc-f5">
+    <div class="container">
+        <div class="fs-1 pt-5 py-lg-3  my-5 text-center">合作客户</div>
+        <div class="row row-cols-5 g-4 hezuo">
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/1.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/2.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/3.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/4.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/5.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/6.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/7.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/8.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/9.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/10.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/11.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/12.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/13.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/14.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/15.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/16.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/17.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/18.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/19.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/20.png" alt="" class="img-fluid"></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="4 my-5 pb-5">
+        <div class="row row-cols-1 row-cols-lg-2 gx-5">
+            <div class="col wow fadeInUp">
+                <div class="about-imgbox cursor"
+                     style="width: 100%; height: 100%; overflow: hidden; position: relative;">
+                    <img src="__STATIC__/portal/imgs/yidian.png" alt="" class="img-fluid about-active"
+                         style="position: absolute; top: 0; left: 0;transition: transform 0.5s ease-out;">
+                </div>
 
-{include file="public/footer" /}
-{include file="public/script" /}
-<script src="__STATIC__/portal/js/lqp.js"></script>
+            </div>
+            <div class="col">
+                <div class="fs-1 mb-5 mt-5 mt-lg-0 text-black">了解易点</div>
+                <div class="fs-14 c-6e">
+                    <p>易点网络是一家致力于短视频拍摄、抖音代运营推广、品牌营销，小红书营销、直播带货等新媒体营销推广的短视频代运营公司，我们配备专业短视频策划团队，根据用户提出的需求和预期，结合市场调查和行业分析，帮客户精准定位运营策划推广方案，可针对不同公司制定运营内容规划，提供包括IP打造、内容规划、账号运营、蓝v认证、短视频内容策划制作、短视频拍摄、内容传播等全面抖音代运营服务，帮助企业建造新的流量池，提高品牌影响力!
+                    </p>
+                    <p>易点公司成立至今，已经和多家企业进行深度合作，服务客户包括餐饮服务、食品行业、零售行业、教育培训、机械设备、家居建材、生活服务、招商加盟、母婴宠物、服装配饰、休闲娱乐等多个行业，公司深耕短视频垂直领域，为客户提供视频的定位、编剧、拍摄、剪辑、投放、运营至引流变现服务体系。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{/block}
+
+{block name="script"}
 <script>
+    // 数字自增
+    var numAdd = function () {
+        $('.number').each(function () {
+            var $this = $(this),
+                countTo = parseInt($this.attr('data-count'));
+            $({ countNum: 0 }).animate({ countNum: countTo },
+                {
+                    duration: 3000,
+                    easing: 'linear',
+                    speed: 'slow',
+                    step: function () {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        $this.text(parseInt(this.countNum).toString());
+                    }
+                });
+        });
+    }
     $(function () {
-        // 数字自增
-        var numAdd = function () {
-            $('.number').each(function () {
-                var $this = $(this),
-                    countTo = parseInt($this.attr('data-count'));
-                $({ countNum:0 }).animate({countNum: countTo},
-                    {
-                        duration: 2000,
-                        easing: 'linear',
-                        step: function () {
-                            $this.text(Math.floor(this.countNum));
-                        },
-                        complete: function () {
-                            $this.text(parseInt(this.countNum).toString());
-                        }
-                    });
-            });
-        }
         numAdd()
     })
+    // 鼠标经过hexin变化背景
+    $(function () {
+        // hexin 经过导航项切换高亮
+        $('.hover-aaa').last().addClass('aaa');// 默认
+        $('.hover-aaa').hover(function () {
+            $('.hover-aaa').removeClass('aaa wow fadeIn').removeAttr('style');
+            $(this).addClass('aaa wow fadeIn animated')
+            $(this).attr("style", "visibility: visible; animation-name: fadeIn")
+
+        })
+        // 鼠标经过fuwu板块放大serve-active
+        $(document).ready(function () {
+            $(".serve-active-father .serve-active").hover(
+                function () {                         //变大
+                    $(this).find('img').animate({ padding: '10px' })
+                    $(this).find('li').animate({ fontSize: '20px', fontWeight: 600 })
+
+                },
+                function () {                          //恢复
+                    $(this).find('img').animate({ paddingBottom: '0px' })
+                    $(this).find('li').animate({ fontSize: '18px', fontWeight: 0 })
+
+
+                }
+            );
+        });
+        // 鼠标经过合作板块放大
+        $('.hezuo img').hover(
+            function () {
+                $(this).addClass('wow fadeIn animated');
+                $(this).attr("style", "visibility: visible; animation-name: fadeInUp") // 重新启动wow
+            },
+            function () {
+                $(this).removeClass('wow fadeIn animated');
+                $(this).removeAttr('style')
+            }
+        )
+    })
+    //
+    $('.case-active').hover(
+        function () {                         //变大
+            $(this).css({ fontWeight: 600 })
+            $(this).find('span').css({ fontWeight: 600, color: '#0070D5' })
+
+        },
+        function () {                          //恢复
+            $(this).removeAttr('style')
+            $(this).find('span').removeAttr('style')
+
+
+        }
+    )
 
 </script>
-</body>
-</html>
+{/script}

@@ -1,0 +1,97 @@
+{extend name="public/index" /}
+
+{block name="main"}
+<div class="banner">
+    <img src="__STATIC__/portal/imgs/banner/solution.png" alt="Logo" class="img-fluid wow fadeIn">
+</div>
+
+<div class="container mb-5">
+    <div class="fs-1 py-3 my-3 my-lg-5 text-center">行业解决方案</div>
+    <div class="row row-cols-2 g-4">
+        <div class="col mb-4 fangan-active">
+            <a href="./solution-infos.html">
+                <div style="overflow: hidden;">
+                    <img src="__STATIC__/portal/imgs/s1.png" alt="" class="img-fluid">
+                </div>
+                <div class="case-card my-4 fs-18 c-15 line1">机械行业全网营销解决方案</div>
+                <span class="fs-14 c-007 py-4 d-block w-25">了解更多 +</span>
+            </a>
+        </div>
+        <div class="col mb-4 fangan-active">
+            <a href="./solution-infos.html">
+                <div style="overflow: hidden;">
+                    <img src="__STATIC__/portal/imgs/s2.png" alt="" class="img-fluid"></div>
+                <div class="case-card my-4 fs-18 c-15 line1">机械行业全网营销解决方案</div>
+                <span class="fs-14 c-007 py-4 d-block w-25">了解更多 +</span>
+            </a>
+        </div>
+        <div class="col mb-4 fangan-active">
+            <a href="./solution-infos.html">
+                <div style="overflow: hidden;">
+                    <img src="__STATIC__/portal/imgs/s3.png" alt="" class="img-fluid"></div>
+                <div class="case-card my-4 fs-18 c-15 line1">机械行业全网营销解决方案</div>
+                <span class="fs-14 c-007 py-4 d-block w-25">了解更多 +</span>
+            </a>
+        </div>
+        <div class="col mb-4 fangan-active">
+            <a href="./solution-infos.html">
+                <div style="overflow: hidden;">
+                    <img src="__STATIC__/portal/imgs/s4.png" alt="" class="img-fluid"></div>
+                <div class="case-card my-4 fs-18 c-15 line1">机械行业全网营销解决方案</div>
+                <span class="fs-14 c-007 py-4 d-block w-25">了解更多 +</span>
+            </a>
+        </div>
+        <div class="col mb-4 fangan-active">
+            <a href="./solution-infos.html">
+                <div style="overflow: hidden;">
+                    <img src="__STATIC__/portal/imgs/s5.png" alt="" class="img-fluid"></div>
+                <div class="case-card my-4 fs-18 c-15 line1">机械行业全网营销解决方案</div>
+                <span class="fs-14 c-007 py-4 d-block w-25">了解更多 +</span>
+            </a>
+        </div>
+        <div class="col mb-4 fangan-active">
+            <a href="./solution-infos.html">
+                <div style="overflow: hidden;">
+                    <img src="__STATIC__/portal/imgs/s6.png" alt="" class="img-fluid"></div>
+                <div class="case-card my-4 fs-18 c-15 line1">机械行业全网营销解决方案</div>
+                <span class="fs-14 c-007 py-4 d-block w-25">了解更多 +</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="pages my-5 py-5">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">首页</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">上一页</a></li>
+        <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">6</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">下一页</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">尾页</a></li>
+
+    </ul>
+</div>
+{/block}
+
+{block name="script"}
+<script>
+    //btn
+    $('.fangan-active').hover(function () {
+            $(this).find('img').addClass('wow pulse animated');
+            $(this).find('img').attr("style", "visibility: visible; animation-name: pulse") // 重新启动wow
+            $(this).find('span').addClass('bgc-007 c-fff text-center').removeClass('c-007')
+        },
+        function () {
+            $(this).find('img').removeClass('wow pulse animated');
+            $(this).find('img').removeAttr('style')
+            $(this).find('span').removeClass('bgc-007 c-fff text-center').addClass('c-007')
+
+        },
+    )
+</script>
+{/block}

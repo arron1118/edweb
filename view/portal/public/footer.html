@@ -1,45 +1,38 @@
-<div class="foot">
-    <nav class="navbar-expand-sm bg-dark navbar-dark py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="f-title mb-4">网站导航</div>
-                    <ul class="sp-ul">
-                        <li>网站首页</li>
-                        <li>短视频代运营</li>
-                        <li>拍摄剪辑</li>
-                        <li>知识技巧</li>
-                        <li>短视频推广</li>
-                        <li>广告投放</li>
-                        <li>成功案例</li>
-                        <li>联系我们</li>
-                    </ul>
+<div class="foot py-5">
+    <div class="container">
+        <div class="row c-fff mb-5">
+            <div class="col-6 col-lg-4">
+                <div class="fs-18 mb-5">联系我们</div>
+                <ul class="fs-14">
+                    <li class="mb-2">{:sysconfig('site', 'contact_company')}</li>
+                    <li class="mb-4">地址：{:sysconfig('site', 'contact_address')}</li>
+                    <li class="mb-2">{:sysconfig('site', 'contact_company2')}</li>
+                    <li>地址：{:sysconfig('site', 'contact_address2')}</li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-4">
+                <div class="fs-18 mb-5">联系电话</div>
+                <ul class="fs-14">
+                    <li class="mb-4">售前咨询梁经理: 18218707084</li>
+                    <li>售后服务何小姐: 18813297034 </li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="d-flex text-center">
+                    <div class="me-4">
+                        <img src="__STATIC__/portal/imgs/code4.png" alt="Logo" class="img-fluid mb-2" style="max-height: 126px;">
+                        <div class="fs-14">扫一扫微信咨询</div>
+                    </div>
+                    <div>
+                        <img src="__STATIC__/portal/imgs/code1.png" alt="Logo" class="img-fluid mb-2" style="max-height: 126px;">
+                        <div class="fs-14">扫一扫微信咨询</div>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="f-title mb-4">联系我们</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-transparent border-0 p-0">全国统一服务热线： {:sysconfig('site', 'contact_service_tel')}</li>
-                        <li class="list-group-item bg-transparent border-0 p-0"> 邮箱：{:sysconfig('site', 'contact_email')}</li>
-                        <li class="list-group-item bg-transparent border-0 p-0"> {:sysconfig('site', 'contact_company')}</li>
-                        <li class="list-group-item bg-transparent border-0 p-0"> 地址：{:sysconfig('site', 'contact_address')}</li>
-                        {if sysconfig('site', 'contact_company2')}
-                        <li class="list-group-item bg-transparent border-0 p-0 mt-3">{:sysconfig('site', 'contact_company2')}</li>
-                        {/if}
-                        {if sysconfig('site', 'contact_address2')}
-                        <li class="list-group-item bg-transparent border-0 p-0">地址：{:sysconfig('site', 'contact_address2')}</li>
-                        {/if}
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <img src="__STATIC__/portal/imgs/code4.png" alt="Logo" class="img-fluid me-4 mb-4">
-                    <img src="__STATIC__/portal/imgs/code1.png" alt="Logo" class="img-fluid mb-4">
-                </div>
+
             </div>
         </div>
-    </nav>
-    <div class="container-fluid text-white-50 bg-dark border-top border-secondary py-2" style="font-size: 13px;">
-        <div class="container">
+        <p class="fs-12 c-cr pt-2 " style="border-top: 2px solid #3e3f40;">
             网站备案号：<a target="_blank" class="text-reset" href="http://www.miitbeian.gov.cn" title="{:sysconfig('site', 'site_beian')}">{:sysconfig('site','site_beian')}</a>
-        </div>
+        </p>
     </div>
 </div>

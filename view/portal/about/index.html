@@ -1,83 +1,359 @@
 {extend name="public/index" /}
 
 {block name="main"}
-{include file="public/about" /}
-<div class="about-cus container">
-    <div class="years d-flex">
-        <div class="years-1 wow slideInDown" data-wow-delay="0.1s">10</div>
-        <div class="years-2">年</div>
-    </div>
-    <div class="years sub-title">
-        我们已成功为上千家企业提供新媒体营销解决方案<br />
-        未来将继续专注于技术创新，服务升级，满足企业一站式市场营销需求
-    </div>
-    {include file="public/cooperate_customers" /}
-</div>
-<div class="about-serve pb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col offset-2">
-                <div class="s-title wow lightSpeedIn" data-wow-delay="0.1s">
-                    专心笃志<br />我们不变的服务志向
+<div class="row justify-content-center w-100 m-0 py-4 wow fadeIn" style="background-image: url('__STATIC__/portal/imgs/banner/about.png'); background-repeat: no-repeat;background-size: 100% 100%;background-position: center center;">
+    <!-- <img src="__STATIC__/portal/imgs/banner/about.png" alt="Logo" class="img-fluid"> -->
+    <div class="col  p-0">
+        <div class="container">
+            <div class="fs-1 c-fff pt-3 pt-lg-5 text-center">
+                <span class="position-relative pb-2 pb-lg-4">了<span style="width: 192px;  border-bottom: 2px solid #fff; left: -14px;" class="position-absolute bottom-0"></span></span>解易点 </div>
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div class="fs-6 c-fff text-center my-5 pt-0 pt-lg-5 ">我们是一家致力于短视频拍摄、抖音代运营推广、品牌营销，小红书营销、直播带货等新媒体营销推广的短视频代运营公司
+                        配备专业短视频策划团队， 根据用户需求和预期，结合市场调查和行业分析，帮客户精准定位运营策划推广方案
+                        可针对不同公司制定运营内容规划，提供包括IP打造、内容规划、账号运营、蓝v认证、短视频内容策划制作、 短视频拍摄、内容传播等
+                        提供全面抖音代运营服务，帮助企业建造新的流量池，提高企业营销力，提升品牌影响力!
+                    </div>
                 </div>
             </div>
+
+
+
+            <div class="row py-lg-5">
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-3">
+                            <img src="__STATIC__/portal/imgs/icon/h1.png" alt="" class="img-fluid" style="max-height: 31px;">
+                        </div>
+                        <div class="col-7 bdr">
+                            <div class="d-flex c-fff fs-2"><div class="number" data-count="12">5000</div><span>年</span></div>
+                            <div class="fs-6 c-fff">互联网营销经验</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-3">
+                            <img src="__STATIC__/portal/imgs/icon/h2.png" alt="" class="img-fluid" style="max-height: 31px;">
+                        </div>
+                        <div class="col-7 bdr">
+                            <div class="d-flex c-fff fs-2 "><div class="number" data-count="5000">5000</div><span>+</span></div>
+
+                            <div class="fs-6 c-fff">合作客户案例</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-3">
+                            <img src="__STATIC__/portal/imgs/icon/h3.png" alt="" class="img-fluid" style="max-height: 31px;">
+                        </div>
+                        <div class="col-7 bdr">
+                            <div class="d-flex c-fff fs-2"><div class="number" data-count="200">200</div><span>人</span></div>
+                            <div class="fs-6 c-fff">专业团队</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-3">
+                            <img src="__STATIC__/portal/imgs/icon/h4.png" alt="" class="img-fluid" style="max-height: 31px;">
+                        </div>
+                        <div class="col-9">
+                            <div class="c-fff fs-2">一对一</div>
+                            <div class="fs-6 c-fff">专业顾问定制方案</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 pe-5">
-                <div class="s-ultitle">
-                    积极沟通
-                </div>
-                <div class="s-ulcontent wow fadeIn"  data-wow-delay="0">
-                    <ul>
-                        <li>我们用服务给予客户短视频营销定制的体验。<br/>
-                            从您成为我们客户的第一天，<br/>
-                            您将会有回家的温暖！<br/>
-                            我们注重每一个细节，<br/>
-                            以原创成就行业品质！</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 pe-5">
-                <div class="s-ultitle">
-                    颠覆思想
-                </div>
-                <div class="s-ulcontent wow fadeIn"  data-wow-delay="0.3s">
-                    <ul>
-                        <li>我们打造一个创新思维的短视频团队，<br/>
-                            汇聚业内顶尖拍摄、剪辑、文案、运营成员
-                            让您的短视频<br/>
-                            从策划到转化都达到精准的营销！</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 pe-5" >
-                <div class="s-ultitle">
-                    突破常规
-                </div>
-                <div class="s-ulcontent wow fadeIn" data-wow-delay="0.6s">
-                    <ul>
-                        <li>打破常规，重新演绎定制的乐趣，<br/>
-                            展示对细节的热爱<br/>
-                            敢做行业先锋，<br/>
-                            与您共创辉煌引领行业前潮</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
-<div class="about-tips" data-wow-delay="0.1s">
-    过往皆为序章  未来一切可期
-</div>
+<div class="module-2 p-4  fs-1 text-center c-fff">专注互联网营销行业，提供更细化的行业解决方案</div>
 <div class="container">
-    <div class="row pb-5 text-center">
-        <div class="col-lg-6 offset-lg-3 col-sm-12 offset-sm-0">
-            <a href="/" class="free-btn">
-                <div style="background: url('__STATIC__/portal/imgs/手指.png') center right no-repeat; background-size: 40px 40px;background-position-x: 80%;">
-                    <span class="me-3" style="font-weight: 900">免费获取</span>短视频运营方案
-                </div>
-            </a>
+    <div class="fs-1 mt-5 pt-lg-3 mb-2 text-center">我们的团队</div>
+    <div class="c-7e mb-5 pb-lg-3 text-center fs-4">营销顾总一对一量身订做方案，8大岗位  服务一个账号</div>
+    <div class="row justify-content-center align-items-center mb-5">
+        <div class="col-12 col-lg-2 mb-4 mb-lg-0">
+            <div class="c-7e fs-2">策划商务</div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInRight name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInRight name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInRight name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInRight name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center mb-5">
+        <!-- order-last 调转到最后 -->
+        <div class="col-12 col-lg-2 mb-4 mb-lg-0 order-lg-last">
+            <div class="c-7e fs-2">运营文案</div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInLeft name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInLeft name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInLeft name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInLeft name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center mb-5">
+        <div class="col-12 col-lg-2 mb-4 mb-lg-0">
+            <div class="c-7e fs-2">拍摄剪辑</div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInRight name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInRight name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInRight name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInRight name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center mb-5">
+        <!-- order-last 调转到最后 -->
+        <div class="col-12 col-lg-2 mb-4 mb-lg-0 order-lg-last">
+            <div class="c-7e fs-2">客服售后</div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInLeft name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInLeft name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInLeft name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
+        </div>
+        <div class="col-3 col-lg-2">
+            <div class="position-relative wow slideInLeft name-active">
+                <img src="__STATIC__/portal/imgs/about1.png" alt="" class="img-fluid">
+                <div class="position-absolute bottom-0 bg-light bg-opacity-50 w-100 p-2 c-fff text-center fs-18 d-none">alex</div>
+            </div>
         </div>
     </div>
 </div>
+<div class="2 row w-100 py-5"  style="background-image: url('__STATIC__/portal/imgs/about-bg.png'); background-repeat: no-repeat;background-size: 100% 100%;background-position: center;">
+    <div class="col p-0">
+        <div class="container text-center pt-5">
+            <div class="c-fff fs-1 mb-3">短视频精准获客营销</div>
+
+            <div class="fs-3 mb-5 pb-5 c-fff line-line text-center">
+                <span class="line-line2"></span>
+                <span>精准价值洼地，覆盖百亿短视频流量</span>
+                <span class="line-line2"></span>
+            </div>
+
+            <div class="row row-cols-2 row-cols-lg-4  mb-5 g-4">
+                <div class="col wow fadeInUp shortview-active">
+                    <div class="py-3 py-lg-5 bgc-007">
+                        <h4 class="server-card-title text-center py-4 mb-0 fs-2 c-fff"><img
+                                src="__STATIC__/portal/imgs/icon/home-we1.png" alt="" class="img-fluid" style="max-height: 55px;"></h4>
+                        <div class="server-card-content text-center">
+                            <ul class="m-0">
+                                <li class="mb-2">短视频拍摄剪辑</li>
+                            </Ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col wow fadeInUp shortview-active">
+                    <div class="py-3 py-lg-5 bgc-007">
+                        <h4 class="server-card-title text-center py-4 mb-0 fs-2 c-fff"><img
+                                src="__STATIC__/portal/imgs/icon/home-we2.png" alt="" class="img-fluid" style="max-height: 55px;"></h4>
+                        <div class="server-card-content text-center">
+                            <ul class="m-0">
+                                <li class="mb-2">短视频代运营</li>
+
+                            </Ul>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col wow fadeInUp shortview-active">
+
+                    <div class="py-3 py-lg-5 bgc-007">
+                        <h4 class="server-card-title text-center py-4 mb-0 fs-2 c-fff"><img
+                                src="__STATIC__/portal/imgs/icon/home-we3.png" alt="" class="img-fluid" style="max-height: 55px;"></h4>
+                        <div class="server-card-content text-center">
+                            <ul class="m-0">
+                                <li class="mb-2">短视频广告投放</li>
+
+                            </Ul>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col wow fadeInUp shortview-active">
+
+                    <div class="py-3 py-lg-5 bgc-007">
+                        <h4 class="server-card-title text-center py-4 mb-0 fs-2 c-fff"><img
+                                src="__STATIC__/portal/imgs/icon/home-we4.png" alt="" class="img-fluid" style="max-height: 55px;"></h4>
+                        <div class="server-card-content text-center">
+                            <ul class="m-0">
+                                <li class="mb-2">短视频矩阵号</li>
+
+                            </Ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="4 mb-5">
+    <div class="container">
+        <div class="fs-1 py-lg-3 my-5 text-center">合作客户</div>
+        <div class="row row-cols-5 g-4 hezuo">
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/1.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/2.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/3.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/4.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/5.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/6.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/7.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/8.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/9.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/10.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/11.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/12.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/13.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/14.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/15.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/16.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/17.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/18.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/19.png" alt="" class="img-fluid"></div>
+            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/20.png" alt="" class="img-fluid"></div>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="script"}
+<script>
+    // 数字自增
+    var numAdd = function () {
+        $('.number').each(function () {
+            var $this = $(this),
+                countTo = parseInt($this.attr('data-count'));
+            $({ countNum: 0 }).animate({ countNum: countTo },
+                {
+                    duration: 3000,
+                    easing: 'linear',
+                    speed: 'slow',
+                    step: function () {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        $this.text(parseInt(this.countNum).toString());
+                    }
+                });
+        });
+    }
+    $(function () {
+        numAdd()
+    })
+    //name
+    $('.name-active').hover(function () {
+            $(this).addClass('cursor')
+            $(this).find('div').removeClass('d-none').animate({height: '20%'});
+        },
+        function () {
+            $(this).find('div').addClass('d-none').removeAttr('style');
+
+        },
+    )
+    // 鼠标经过合作板块放大
+    $('.hezuo img').hover(
+        function () {
+            $(this).addClass('wow fadeIn animated');
+            $(this).attr("style", "visibility: visible; animation-name: fadeInUp") // 重新启动wow
+        },
+        function () {
+            $(this).removeClass('wow fadeIn animated');
+            $(this).removeAttr('style')
+        }
+    )
+    // shortview-active
+    $('.shortview-active').hover(
+        function () {
+            $(this).addClass('cursor')
+            $(this).find('img').css({maxHeight: '44px'});
+            $(this).find('li').addClass('fs-4')
+        },
+        function () {
+            $(this).find('img').removeAttr('style');
+            $(this).find('img').css({maxHeight: '55px'});
+            $(this).find('li').removeClass('fs-4')
+        }
+    )
+</script>
 {/block}

@@ -1,44 +1,60 @@
-  <header class="navbar navbar-expand-lg navbar-dark bd-navbar sticky-top" style="padding-bottom: 60px;">
-    <nav class="navbar bg-light fixed-top ">
-      <div class="container">
-         <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
-           <img src="{:sysconfig('site','logo_image')}" alt="Logo" class="img-fluid">
-         </a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none">
-              <img src="{:sysconfig('site','logo_image')}" alt="Logo" class="img-fluid">
+<div class="header container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark p-0">
+        <div class="container-fluid p-0 py-2">
+            <a href="#" class="d-flex align-items-center me-md-auto text-dark text-decoration-none">
+                <img src="{:sysconfig('site', 'logo_image')}" alt="Logo" class="img-fluid" style="height: 31px;">
             </a>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-around flex-grow-1 px-5">
-              <li class="nav-item">
-                <a href="/index.html" class="nav-link {if ($controller === 'index')}active{/if}" aria-current="page">首页</a>
-              </li>
-              <li class="nav-item">
-                <a href="/service.html" class="nav-link {if ($controller === 'service')}active{/if}">服务</a>
-              </li>
-              <li class="nav-item">
-                <a href="/cases.html" class="nav-link {if ($controller === 'cases')}active{/if}">案例</a>
-              </li>
-              <li class="nav-item">
-                <a href="/share.html" class="nav-link {if ($controller === 'share')}active{/if}">分享</a>
-              </li>
-              <li class="nav-item">
-                <a href="/about.html" class="nav-link {if ($controller === 'about')}active{/if}">我们</a>
-              </li>
-              <li class="nav-item">
-                <a href="/contact.html" class="nav-link {if ($controller === 'contact')}active{/if}">联系</a>
-              </li>
-            </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end float-end" tabindex="-1" id="offcanvasNavbar"
+                 aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header theme-bgcolor">
 
-          </div>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                        <img src="__STATIC__/portal/imgs/logo.png" alt="Logo" class="img-fluid" style="height: 31px;">
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-lg-flex justify-content-lg-end">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a href="/index.html"
+                               class="nav-link {if ($controller === 'index')}active{/if}"
+                               aria-current="page">首页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/shortVideo.html"
+                               class="nav-link {if ($controller === 'shortvideo')}active{/if}">短视频营销</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/newMedia.html"
+                               class="nav-link {if ($controller === 'newmedia')}active{/if}">新媒体营销</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/solution.html"
+                               class="nav-link {if ($controller === 'solution')}active{/if}">行业解决方案</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/cases.html"
+                               class="nav-link {if ($controller === 'cases')}active{/if}">案例鉴赏</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/tiktok.html"
+                               class="nav-link {if ($controller === 'tiktok')}active{/if}">Tiktok运营</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/website.html"
+                               class="nav-link {if ($controller === 'website')}active{/if}">网站建设</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/about.html"
+                               class="nav-link {if ($controller === 'about')}active{/if}">关于我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </nav>
-  </header>
-
+</div>
