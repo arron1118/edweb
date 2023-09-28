@@ -75,9 +75,9 @@ class Solution extends PortalController
         ]);
     }
 
-    public function info($id)
+    public function info($id = 0)
     {
-        $info = $this->model::find($id);
+        $info = $this->model::findOrEmpty($id);
         $this->view->assign([
             'info' => $info,
             'title' => $info['title'],
@@ -85,6 +85,6 @@ class Solution extends PortalController
             'description' => $info['description'],
         ]);
 
-        return $this->view->fetch('public/info');
+        return $this->view->fetch();
     }
 }
