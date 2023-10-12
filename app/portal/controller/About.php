@@ -17,12 +17,10 @@ class About extends PortalController
             ->where([
                 'status' => 1,
             ])->order('id asc, sort desc')->select();
-        $this->view->assign([
-            'cooperate_customers' => $cooperateCustomers,
-        ]);
 
         $html = $this->view->display(sysconfig('site', 'html_content'));
         $this->view->assign([
+            'cooperate_customers' => $cooperateCustomers,
             'html' => $html,
         ]);
 

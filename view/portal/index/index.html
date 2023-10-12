@@ -204,31 +204,7 @@
     </div>
 </div>
 <div class="4 pb-5 pt-lg-3 bgc-f5">
-    <div class="container">
-        <div class="fs-1 pt-5 py-lg-3  my-5 text-center">合作客户</div>
-        <div class="row row-cols-5 g-4 hezuo">
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/1.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/2.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/3.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/4.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/5.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/6.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/7.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/8.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/9.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/10.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/11.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/12.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/13.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/14.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/15.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/16.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/17.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/18.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/19.png" alt="" class="img-fluid"></div>
-            <div class="col cursor wow fadeInUp"><img src="__STATIC__/portal/imgs/custom/20.png" alt="" class="img-fluid"></div>
-        </div>
-    </div>
+    {include file="public/cooperate_customers" /}
 </div>
 <div class="container">
     <div class="4 my-5 pb-5">
@@ -264,7 +240,6 @@
         $('.number').each(function () {
             var $this = $(this),
                 countTo = parseInt($this.attr('data-count'));
-            console.log($this)
             $({ countNum: 0 }).animate({ countNum: countTo },
                 {
                     duration: 3000,
@@ -282,60 +257,38 @@
         // hexin 经过导航项切换高亮
         $('.hover-aaa').last().addClass('aaa');// 默认
         $('.hover-aaa').hover(function () {
-                $('.hover-aaa').removeClass('aaa wow fadeIn').removeAttr('style');
-                $('.hover-aaa').attr("style", "height: 490px")
-                $(this).addClass('aaa wow fadeIn animated')
-                $(this).attr("style", "visibility: visible; animation-name: fadeIn; height: 490px")
-                $(this).find('span').addClass('c-007').removeClass('c-fff')
-
-
-            },
-            function () {
-                $(this).find('span').removeClass('c-007').addClass('c-fff')
-            }
-        )
+            $('.hover-aaa').removeClass('aaa wow fadeIn').removeAttr('style');
+            $('.hover-aaa').attr("style", "height: 490px")
+            $(this).addClass('aaa wow fadeIn animated')
+            $(this).attr("style", "visibility: visible; animation-name: fadeIn; height: 490px")
+            $(this).find('span').addClass('c-007').removeClass('c-fff')
+        },
+        function () {
+            $(this).find('span').removeClass('c-007').addClass('c-fff')
+        })
         // 鼠标经过fuwu板块放大serve-active
-        $(document).ready(function () {
-            $(".serve-active-father .serve-active").hover(
-                function () {                         //变大
-                    $(this).find('img').animate({ padding: '10px' })
-                    $(this).find('li').animate({ fontSize: '20px', fontWeight: 600 })
-
-                },
-                function () {                          //恢复
-                    $(this).find('img').animate({ paddingBottom: '0px' })
-                    $(this).find('li').animate({ fontSize: '18px', fontWeight: 0 })
-
-
-                }
-            );
-        });
-        // 鼠标经过合作板块放大
-        $('.hezuo img').hover(
-            function () {
-                $(this).addClass('wow fadeIn animated');
-                $(this).attr("style", "visibility: visible; animation-name: fadeInUp") // 重新启动wow
+        $(".serve-active-father .serve-active").hover(
+            function () {                         //变大
+                $(this).find('img').animate({ padding: '10px' })
+                $(this).find('li').animate({ fontSize: '20px', fontWeight: 600 })
             },
-            function () {
-                $(this).removeClass('wow fadeIn animated');
+            function () {                          //恢复
+                $(this).find('img').animate({ paddingBottom: '0px' })
+                $(this).find('li').animate({ fontSize: '18px', fontWeight: 0 })
+            }
+        );
+        //
+        $('.case-active').hover(
+            function () {                         //变大
+                $(this).css({ fontWeight: 600 })
+                $(this).find('span').css({ fontWeight: 600, color: '#0070D5' })
+            },
+            function () {                          //恢复
                 $(this).removeAttr('style')
+                $(this).find('span').removeAttr('style')
             }
         )
     })
-    //
-    $('.case-active').hover(
-        function () {                         //变大
-            $(this).css({ fontWeight: 600 })
-            $(this).find('span').css({ fontWeight: 600, color: '#0070D5' })
-
-        },
-        function () {                          //恢复
-            $(this).removeAttr('style')
-            $(this).find('span').removeAttr('style')
-
-
-        }
-    )
 
 </script>
 {/block}

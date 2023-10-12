@@ -1,7 +1,27 @@
-<div class="row row-cols-6 align-items-center">
-    {foreach ($cooperate_customers as $key => $val)}
-    <div class="col mb-4 text-center company-list wow {if ($key % 2 === 0)} slideInDown {else} slideInLeft {/if}" {if ($key % 2 === 0)} data-wow-delay="0.3s" {else} data-wow-delay="0.1s" {/if}>
-        <img src="{$val.logo|default='static/common/images/nopic.jpg'}" class="img-fluid" alt="{$val.title}" title="{$val.title}" style="max-height: 84px;" />
+
+<div class="container">
+    <div class="fs-1 py-lg-3 my-5 text-center">合作客户</div>
+    <div class="row row-cols-5 g-4 hezuo align-items-center">
+        {foreach ($cooperate_customers as $key => $val)}
+        <div class="col mb-4 text-center company-list cursor wow fadeInUp" {if ($key % 2 === 0)} data-wow-delay="0.3s" {else} data-wow-delay="0.1s" {/if}>
+            <img src="{$val.logo|default='static/common/images/nopic.jpg'}" class="img-fluid" alt="{$val.title}" title="{$val.title}" style="max-height: 84px;" />
+        </div>
+        {/foreach}
     </div>
-    {/foreach}
 </div>
+
+<script>
+    $(function () {
+        // 鼠标经过合作板块放大
+        $('.hezuo img').hover(
+            function () {
+                $(this).addClass('wow fadeIn animated');
+                $(this).attr("style", "visibility: visible; animation-name: fadeInUp") // 重新启动wow
+            },
+            function () {
+                $(this).removeClass('wow fadeIn animated');
+                $(this).removeAttr('style')
+            }
+        )
+    })
+</script>
