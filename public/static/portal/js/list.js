@@ -71,6 +71,7 @@
         let _self = this
         $.get(_self.CONFIG.LIST_URL, {cate_id: cate_id, page: page, limit: limit}, function (cases) {
             if (cases.data.length > 0) {
+
                 $('#pills-' + cate_id + ' .list-content').children().remove()
                 // content
                 $.each(cases.data, function (index, item) {

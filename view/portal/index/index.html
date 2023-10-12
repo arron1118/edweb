@@ -259,11 +259,12 @@
 
 {block name="script"}
 <script>
-    // 数字自增
-    var numAdd = function () {
+    // 鼠标经过hexin变化背景
+    $(function () {
         $('.number').each(function () {
             var $this = $(this),
                 countTo = parseInt($this.attr('data-count'));
+            console.log($this)
             $({ countNum: 0 }).animate({ countNum: countTo },
                 {
                     duration: 3000,
@@ -277,20 +278,22 @@
                     }
                 });
         });
-    }
-    $(function () {
-        numAdd()
-    })
-    // 鼠标经过hexin变化背景
-    $(function () {
+
         // hexin 经过导航项切换高亮
         $('.hover-aaa').last().addClass('aaa');// 默认
         $('.hover-aaa').hover(function () {
-            $('.hover-aaa').removeClass('aaa wow fadeIn').removeAttr('style');
-            $(this).addClass('aaa wow fadeIn animated')
-            $(this).attr("style", "visibility: visible; animation-name: fadeIn")
+                $('.hover-aaa').removeClass('aaa wow fadeIn').removeAttr('style');
+                $('.hover-aaa').attr("style", "height: 490px")
+                $(this).addClass('aaa wow fadeIn animated')
+                $(this).attr("style", "visibility: visible; animation-name: fadeIn; height: 490px")
+                $(this).find('span').addClass('c-007').removeClass('c-fff')
 
-        })
+
+            },
+            function () {
+                $(this).find('span').removeClass('c-007').addClass('c-fff')
+            }
+        )
         // 鼠标经过fuwu板块放大serve-active
         $(document).ready(function () {
             $(".serve-active-father .serve-active").hover(
@@ -335,4 +338,4 @@
     )
 
 </script>
-{/script}
+{/block}
