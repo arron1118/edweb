@@ -9,13 +9,14 @@
 </style>
 {if $carousel}
 <div class="banner mb-5 wow fadeIn" data-wow-delay="0">
-    <img src="{$carousel.img}" alt="" class="img-fluid">
+    <img src="__STATIC__/portal/imgs/banner/solution.png" alt="Logo" class="img-fluid">
 </div>
 {/if}
 <div class="container">
     <div class="module-title my-5 text-center">
         {$info.title}
     </div>
+    <hr class="bg-light mb-5" />
     <div class="infos-content mb-5">
         {:htmlspecialchars_decode($info.content)}
     </div>

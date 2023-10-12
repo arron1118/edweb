@@ -1,8 +1,32 @@
 {extend name="public/index" /}
 
 {block name="main"}
-<div class="banner wow fadeIn">
-    <img src="__STATIC__/portal/imgs/banner/shortvideo.png" alt="Logo" class="img-fluid">
+<div class="fp-section py-lg-5" style="background-image:  url('__STATIC__/portal/imgs/banner/shortvideo2.png');
+    background-repeat: no-repeat;background-size: 100% 100%;background-position: center center;
+height: 100%; overflow: hidden;
+">
+    <div class="row w-100 m-0 pb-5 pt-lg-5">
+        <div class="col p-0">
+            <div class="container text-center pb-lg-5">
+                <div class="c-fff fs-1 mt-5 mb-3 mt-lg-0 mb-lg-5">短视频精准获客营销</div>
+                <div class="fs-3 mb-5 pb-5 c-fff line-line text-center">
+                    <span class="line-line2"></span>
+                    <span class="mx-5 fs-3">一对一量身定制服务方案</span>
+                    <span class="line-line2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row w-100">
+        <div class="col p-0">
+            <div class="fp-tableCell" style="">
+                <div class="bgox" id="bgox" data-color="#ffffff">
+                    <div class="d-none d-lg-block"><canvas height="350"></canvas></div>
+                    <div class="d-block d-lg-none"><canvas></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="container mb-5">
     <div class="fs-1 py-lg-3 my-5 text-center">做短视频你是否面临以下问题？</div>
@@ -229,6 +253,8 @@
 {/block}
 
 {block name="script"}
+<script src="__STATIC__/plugs/three/three.min.js"></script>
+<script src="__STATIC__/plugs/three/index.js"></script>
 <script>
     // 服务
     $('.ser-active').hover(
@@ -258,14 +284,22 @@
             $(this).removeAttr('style');
         }
     )
+
     // hexin 经过导航项切换高亮
     $('.hover-aaa').last().addClass('aaa');// 默认
     $('.hover-aaa').hover(function () {
-        $('.hover-aaa').removeClass('aaa wow fadeIn').removeAttr('style');
-        $(this).addClass('aaa wow fadeIn animated')
-        $(this).attr("style", "visibility: visible; animation-name: fadeIn")
+            $('.hover-aaa').removeClass('aaa wow fadeIn').removeAttr('style');
+            $('.hover-aaa').attr("style", "height: 490px")
+            $(this).addClass('aaa wow fadeIn animated')
+            $(this).attr("style", "visibility: visible; animation-name: fadeIn; height: 490px")
+            $(this).find('span').addClass('c-007').removeClass('c-fff')
 
-    })
+
+        },
+        function () {
+            $(this).find('span').removeClass('c-007').addClass('c-fff')
+        }
+    )
     //hezuo-active
     $('.hezuo-active').hover(function () {
             $(this).addClass('cursor')
@@ -285,6 +319,5 @@
             $(this).removeAttr("style")
         },
     )
-
 </script>
 {/block}

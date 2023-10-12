@@ -71,7 +71,7 @@ color: #000000;
     color: #585858;
 }
 .c-007{
-    color: #0070D5;
+    color: #0070D5 !important;
 }
 .c-6e{
     color: #6E6E6E
@@ -138,7 +138,7 @@ color: #000000;
     display:inline-block;
     width:100px;
     border-top:3px solid #cccccc;
-    vertical-align:5px;  
+    vertical-align:5px;
 }
 .module-1{
     background-color: #000000;
@@ -206,10 +206,11 @@ color: #000000;
 }
 .tabs-lqp {
     border-bottom: none;
-    font-size: 18px;
+    font-size: 18px !important;
 }
 .tabs-lqp .nav-link{
     color: #8e8e8f !important;
+    font-size: 18px !important;
 }
 .tabs-lqp .nav-link:hover{
     color: #0070D5 !important;
@@ -218,10 +219,10 @@ color: #000000;
 }
 .tabs-lqp .nav-link.active{
     color: #ffffff !important;
-    background-color: #0070D5;
+    background-color: #0070D5 !important;
     border: none;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 18px !important;
 
 }
 .aaa{
@@ -239,4 +240,16 @@ color: #000000;
 }
 .about-imgbox:hover img{
 transform: scale(1.2);
+}
+/* 3d动画 */
+.fp-section{
+    position: relative;
+}
+.fp-tableCell .bgox{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
 }

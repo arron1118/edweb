@@ -21,7 +21,7 @@
             if (cates.length > 0) {
                 // tablist
                 let nav = $('<ul />', {
-                    class: 'nav nav-pills mb-3 justify-content-center',
+                    class: 'nav nav-pills tabs-lqp mb-4 justify-content-center',
                     id: 'pills-tab',
                     role: 'tablist',
                 })
@@ -32,7 +32,7 @@
 
                 $.each(cates, function (index, item) {
                     nav.append($('<li />', {
-                        class: 'nav-item mb-5',
+                        class: 'nav-item',
                         role: 'presentation',
                         'data-id': item.id,
                     }).append($('<button />', {
@@ -53,9 +53,9 @@
                         'aria-labelledby': 'pills-' + item.id + '-tab',
                         tabindex: index,
                     }).append($('<div />', {
-                        class: 'container tab-pane',
+                        class: 'container tab-pane mb-5',
                     }).append($('<div />', {
-                        class: 'row list-content',
+                        class: 'row row-cols-2 row-cols-lg-3 g-4 list-content',
                     }))))
                 })
 
@@ -76,37 +76,39 @@
                 $.each(cases.data, function (index, item) {
                     let listContent = $('#pills-' + cate_id + ' .list-content')
                     listContent.append($('<div />', {
-                        class: 'col-lg-4 col-md-6 col-sm-6 mb-4',
+                        class: 'col case-aaa',
                     }).append($('<div />', {
-                        class: 'card p-0 border-0 bg-transparent',
-                    }).hover(function () {
-                        $(this).addClass('shadow')
-                    }, function () {
-                        $(this).removeClass('shadow')
+                        class: 'position-relative',
                     }).append($('<div/>',{
                             class:'d-flex justify-content-center align-items-center',
                             style:'height: 300px;'
-                        }).append(
-                            $('<img />', {
+                        }).append($('<img />', {
                             src: item.cover_img ? item.cover_img : '/static/common/images/nopic.jpg',
                             alt: item.title,
                             class: 'card-img-top img-fluid',
                             style: 'max-height: 300px;width: auto;',
-                        })
-                        )
-
-                    ).append($('<div />', {
-                        class: 'card-body'
-                    }).append($('<div />', {
-                        class: 'card-title line1',
-                    }).append($('<a />', {
-                        class: 'stretched-link text-reset',
+                        }))
+                    ).append($('<a />', {
+                        class: 'stretched-link text-reset line1 fs-18 c-15 mb-2',
                         href: _self.CONFIG.INFO_URL + '?id=' + item.id,
                         title: item.title,
                         target: '_blank',
-                    }).text(item.title))).append($('<div />', {
-                        class: 'card-content line3',
-                    }).text(item.description)))))
+                    }).text(item.title)).append($('<div />', {
+                        class: 'line2 fs-14 c-666 mb-2',
+                    }).text(item.description))
+                        .append($('<span />', {
+                            class: 'fs-14 c-666',
+                            text: '了解更多 +',
+                        }))).hover(function () {
+                            $(this).find('a').addClass('c-007').removeClass('c-15');
+                            $(this).find('span').addClass('c-007').removeClass('c-666')
+                        },
+                        function () {
+                            $(this).find('a').removeClass('c-007').addClass('c-15');
+                            $(this).find('span').removeClass('c-007').addClass('c-666')
+
+                        },
+                    ))
                 })
 
                 // pages

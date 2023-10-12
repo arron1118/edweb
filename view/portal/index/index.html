@@ -7,14 +7,14 @@
 <div style="border-bottom: 2px solid #d8d7dd;">
 
     <div class="container">
-        <div class="row row-cols-2 row-cols-lg-4 py-3 g-4 g-lg-0">
+        <div class="row row-cols-2 row-cols-lg-6 justify-content-between py-3 g-4 g-lg-0">
             <div class="col">
                 <div class="row align-items-center">
                     <div class="col-3">
                         <img src="__STATIC__/portal/imgs/icon/home-1.png" alt="" class="img-fluid" style="max-height: 31px;">
                     </div>
-                    <div class="col-9">
-                        <div class="d-flex c-007 fs-3"><div class="number" data-count="12">12</div><span>年</span></div>
+                    <div class="col-9 ">
+                        <div class="c-007 fs-3"><span class="number" data-count="12">12</span><span>年</span></div>
                         <div class="fs-6 c-58">互联网营销经验</div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                         <img src="__STATIC__/portal/imgs/icon/home-2.png" alt="" class="img-fluid" style="max-height: 31px;">
                     </div>
                     <div class="col-9">
-                        <div class="d-flex c-007 fs-3"><div class="number" data-count="5000">5000</div><span>+</span></div>
+                        <div class="c-007 fs-3"><span class="number" data-count="5000">5000</span><span>+</span></div>
                         <div class="fs-6 c-58">合作客户案例</div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         <img src="__STATIC__/portal/imgs/icon/home-3.png" alt="" class="img-fluid" style="max-height: 31px;">
                     </div>
                     <div class="col-9">
-                        <div class="d-flex c-007 fs-3"><div class="number" data-count="200">200</div><span>人</span></div>
+                        <div class="c-007 fs-3"><span class="number" data-count="200">200</span><span>人</span></div>
                         <div class="fs-6 c-58">专业团队</div>
                     </div>
                 </div>
@@ -157,27 +157,27 @@
         <div class="fs-1 mb-5 text-center">易点核心优势</div>
         <div class="row row-cols-1 row-cols-lg-3">
             <div class="col">
-                <div class="px-4 py-5 server-card position-relative cursor hover-aaa wow fadeIn">
+                <div class="px-4 py-5 server-card position-relative cursor hover-aaa wow fadeIn" style="height: 490px;">
                     <div class="mb-3 fs-64 c-d8 fw-bold">01</div>
                     <div class="fs-18 mb-4">短视频平台算法</div>
-                    <div class="fs-14 mb-4">易点网络本身是一家从事互联网12年的企业，潜心研究抖音平台排名算法，专业的抖音代运营团队为您服务!</div>
-                    <span class="mt-5 position-absolute bottom-0 mb-5" style="width: 48px; height: 3px;"></span>
+                    <div class="fs-14 mb-4 pb-5">易点网络本身是一家从事互联网12年的企业，潜心研究抖音平台排名算法，专业的抖音代运营团队为您服务!</div>
+                    <span class="mt-5 position-absolute bottom-0 mb-5 bgc-007" style="width: 48px; height: 3px;"></span>
                 </div>
             </div>
             <div class="col">
-                <div class="p-4 py-5 server-card position-relative cursor hover-aaa wow fadeIn">
+                <div class="p-4 py-5 server-card position-relative cursor hover-aaa wow fadeIn" style="height: 490px;">
                     <div class="mb-3 fs-64 c-d8 fw-bold">02</div>
                     <div class="fs-18 mb-4">更懂整合营销</div>
-                    <div class="fs-14 mb-4">抖音、小红书是年轻人的时尚，是新时代的营销平台，是算法流量的渠道入口，我们，懂策划更懂线上营销!</div>
-                    <span class="mt-5 position-absolute bottom-0 mb-5" style="width: 48px; height: 3px;"></span>
+                    <div class="fs-14 mb-4 pb-5">抖音、小红书是年轻人的时尚，是新时代的营销平台，是算法流量的渠道入口，我们，懂策划更懂线上营销!</div>
+                    <span class="mt-5 position-absolute bottom-0 mb-5 bgc-007" style="width: 48px; height: 3px;"></span>
                 </div>
             </div>
             <div class="col">
-                <div class="p-4 py-5 server-card position-relative cursor hover-aaa wow fadeIn">
+                <div class="p-4 py-5 server-card position-relative cursor hover-aaa wow fadeIn" style="height: 490px;">
                     <div class="mb-3 fs-64 c-d8 fw-bold">03</div>
                     <div class=" fs-18 mb-4">更专业的团队</div>
-                    <div class=" fs-14 mb-4">团队聚合了众多影视、广告、设计、营销专业的青年才俊，可以为您提供更专业的编剧、营销策划、美术指导及拍摄剪辑服务!</div>
-                    <span class="mt-5 position-absolute bottom-0 mb-5" style="width: 48px; height: 3px;"></span>
+                    <div class=" fs-14 mb-4 pb-5">团队聚合了众多影视、广告、设计、营销专业的青年才俊，可以为您提供更专业的编剧、营销策划、美术指导及拍摄剪辑服务!</div>
+                    <span class="mt-5 position-absolute bottom-0 mb-5 bgc-007" style="width: 48px; height: 3px;"></span>
                 </div>
             </div>
         </div>
@@ -187,66 +187,19 @@
     <div class="3 mb-5">
         <div class="fs-1 py-lg-3 my-5 text-center">运营案例</div>
         <div class="row row-cols-2 row-cols-lg-3 g-4">
+            {foreach $cases as $key => $val}
             <div class="col">
                 <div class="case-active cursor wow fadeInUp">
-                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
-                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
+                    <a class="stretched-link" href="/Cases/info?id={$val.id}"></a>
+                    <img src="{$val.cover_img}" alt="" class="img-fluid">
+                    <div class="my-4 line1 fs-18 c-15">{$val.title}</div>
                     <div class="line2 fs-14 c-666 mb-4">
-                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
+                        {$val.description}
                     </div>
                     <span class="fs-14 c-666">了解更多 +</span>
                 </div>
             </div>
-            <div class="col">
-                <div class="case-active cursor wow fadeInUp">
-                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
-                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
-                    <div class="line2 fs-14 c-666 mb-4">
-                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
-                    </div>
-                    <span class="fs-14 c-666">了解更多 +</span>
-                </div>
-            </div>
-            <div class="col">
-                <div class="case-active cursor wow fadeInUp">
-                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
-                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
-                    <div class="line2 fs-14 c-666 mb-4">
-                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
-                    </div>
-                    <span class="fs-14 c-666">了解更多 +</span>
-                </div>
-            </div>
-            <div class="col">
-                <div class="case-active cursor wow fadeInUp">
-                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
-                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
-                    <div class="line2 fs-14 c-666 mb-4">
-                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
-                    </div>
-                    <span class="fs-14 c-666">了解更多 +</span>
-                </div>
-            </div>
-            <div class="col">
-                <div class="case-active cursor wow fadeInUp">
-                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
-                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
-                    <div class="line2 fs-14 c-666 mb-4">
-                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
-                    </div>
-                    <span class="fs-14 c-666">了解更多 +</span>
-                </div>
-            </div>
-            <div class="col">
-                <div class="case-active cursor wow fadeInUp">
-                    <img src="__STATIC__/portal/imgs/01.png" alt="" class="img-fluid">
-                    <div class="my-4 line1 fs-18 c-15">易点网络广州分公司网站案例易点网络广州分公司网站案例易点网络广州分公司网站案例</div>
-                    <div class="line2 fs-14 c-666 mb-4">
-                        合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....合作运营上线10个月，月均询盘200+，总播放量27W,点赞量180W，粉丝新增数量10W....
-                    </div>
-                    <span class="fs-14 c-666">了解更多 +</span>
-                </div>
-            </div>
+            {/foreach}
         </div>
     </div>
 </div>
