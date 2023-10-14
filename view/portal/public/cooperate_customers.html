@@ -16,11 +16,11 @@
         $('.hezuo img').hover(
             function () {
                 $(this).addClass('wow fadeIn animated');
-                $(this).attr("style", "visibility: visible; animation-name: fadeInUp") // 重新启动wow
+                $(this).css({ visibility: 'visible', animationName: 'fadeInUp' }) // 重新启动wow
             },
             function () {
                 $(this).removeClass('wow fadeIn animated');
-                $(this).removeAttr('style')
+                $(this).css({ visibility: 'unset', animationName: 'unset' })
             }
         )
     })
