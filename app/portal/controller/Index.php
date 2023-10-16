@@ -23,6 +23,13 @@ class Index extends PortalController
             ])->order('sort desc, id asc')
             ->select();
 
+        $carousel = Carousel::field('id, img, url, content')->where([
+            'status' => 1,
+            'cate_id' => 1,
+        ])->order('sort asc, id desc')
+            ->limit(3)
+            ->select();
+
         // 案例
         $cases = Cases::field('id, title, cover_img, description')
             ->where([
@@ -35,6 +42,7 @@ class Index extends PortalController
         $this->view->assign([
             'cooperate_customers' => $cooperateCustomers,
             'cases' => $cases,
+            'carousel' => $carousel,
         ]);
 
         return $this->view->fetch();

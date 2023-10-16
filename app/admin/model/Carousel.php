@@ -12,15 +12,24 @@ class Carousel extends TimeModel
     protected $deleteTime = "delete_time";
 
 
-
     public function getCateIdList()
     {
-        return ['1'=>'首页','2'=>'服务','3'=>'案例','4'=>'分享','5'=>'联系我们', '6' => '详情页'];
+        return [
+            1 => '首页',
+            2 => '短视频营销',
+            3 => '新媒体营销',
+            4 => '行业解决方案',
+            5 => '案例鉴赏',
+            6 => 'Tiktok运营',
+            7 => '网站建设',
+            8 => '关于我们',
+            9 => '详情页',
+        ];
     }
 
     public function getStatusList()
     {
-        return ['0'=>'禁用','1'=>'启用',];
+        return ['0' => '禁用', '1' => '启用',];
     }
 
 

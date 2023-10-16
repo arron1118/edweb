@@ -1,9 +1,25 @@
 {extend name="public/index" /}
 
 {block name="main"}
-<div class="banner wow fadeIn">
-    <img src="__STATIC__/portal/imgs/banner/home.png" alt="Logo" class="img-fluid">
+<!--轮播图-->
+{if $carousel}
+<div id="carouselExampleCaptions" class="carousel slide home-banner wow fadeIn" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        {foreach $carousel as $key => $val}
+        <div class="carousel-item {if $key === 0}active{/if}">
+            <img src="{$val.img}" class="d-block w-100 h-auto" alt="" style=" max-height: 1095px">
+        </div>
+        {/foreach}
+    </div>
+    <div class="carousel-indicators">
+        {foreach $carousel as $key => $val}
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{$key}" class="{if $key === 0}active{/if}"></button>
+        {/foreach}
+    </div>
+
 </div>
+{/if}
+<!--轮播图-->
 <div style="border-bottom: 2px solid #d8d7dd;">
 
     <div class="container">

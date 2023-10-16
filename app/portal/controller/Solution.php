@@ -99,6 +99,6 @@ class Solution extends PortalController
             'description' => $info['description'],
         ]);
 
-        return $this->view->fetch();
+        return $this->view->fetch('public/info');
     }
 }
