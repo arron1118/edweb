@@ -190,16 +190,27 @@
             {foreach $cases as $key => $val}
             <div class="col">
                 <div class="case-active cursor wow fadeInUp">
-                    <a class="stretched-link" href="/Cases/info?id={$val.id}"></a>
-                    <img src="{$val.cover_img}" alt="" class="img-fluid">
+                    <a class="" href="/Cases/info?id={$val.id}">
+<!--                        <img src="{$val.cover_img}" alt="" class="img-fluid">-->
+                        <div class="about-imgbox cursor"
+                             style="width: 100%; height: 100%; overflow: hidden;">
+                            <img src="{$val.cover_img}" alt="" class="img-fluid about-active"
+                                 style="transition: transform 0.5s ease-out;">
+                        </div>
                     <div class="my-4 line1 fs-18 c-15">{$val.title}</div>
                     <div class="line2 fs-14 c-666 mb-4">
                         {$val.description}
                     </div>
                     <span class="fs-14 c-666">了解更多 +</span>
+                    </a>
                 </div>
             </div>
             {/foreach}
+        </div>
+        <div class="row py-5 my-5 justify-content-center">
+            <div class="col-10 col-lg-4">
+                <a href="/Cases/index.html"> <img src="__STATIC__/portal/imgs/casemore-btn.png" alt="Logo" class="img-fluid btn-active"></a>
+            </div>
         </div>
     </div>
 </div>
@@ -211,9 +222,9 @@
         <div class="row row-cols-1 row-cols-lg-2 gx-5">
             <div class="col wow fadeInUp">
                 <div class="about-imgbox cursor"
-                     style="width: 100%; height: 100%; overflow: hidden; position: relative;">
+                     style="width: 100%; height: 100%; overflow: hidden;">
                     <img src="__STATIC__/portal/imgs/yidian.png" alt="" class="img-fluid about-active"
-                         style="position: absolute; top: 0; left: 0;transition: transform 0.5s ease-out;">
+                         style="transition: transform 0.5s ease-out;">
                 </div>
 
             </div>

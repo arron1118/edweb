@@ -77,23 +77,24 @@
                 $.each(cases.data, function (index, item) {
                     let listContent = $('#pills-' + cate_id + ' .list-content')
                     listContent.append($('<div />', {
-                        class: 'col case-aaa',
+                        class: 'col',
                     }).append($('<div />', {
-                        class: 'position-relative',
-                    }).append($('<div/>',{
-                            class:'d-flex justify-content-center align-items-center',
-                            style:'height: 300px;'
-                        }).append($('<img />', {
-                            src: item.cover_img ? item.cover_img : '/static/common/images/nopic.jpg',
-                            alt: item.title,
-                            class: 'card-img-top img-fluid',
-                            style: 'max-height: 300px;width: auto;',
-                        }))
-                    ).append($('<a />', {
-                        class: 'stretched-link text-reset line1 fs-18 c-15 mb-2',
+                        class: 'case-active cursor wow fadeInUp',
+                    }).append($('<a />', {
                         href: _self.CONFIG.INFO_URL + '?id=' + item.id,
                         title: item.title,
                         target: '_blank',
+                    }).append($('<div/>',{
+                            class:'about-imgbox cursor',
+                            style:'width: 100%; height: 100%; overflow: hidden;'
+                        }).append($('<img />', {
+                            src: item.cover_img ? item.cover_img : '/static/common/images/nopic.jpg',
+                            alt: item.title,
+                            class: 'img-fluid about-active',
+                            style: 'transition: transform 0.5s ease-out;',
+                        }))
+                    ).append($('<div />', {
+                        class: ' text-reset line1 fs-18 c-15 my-3',
                     }).text(item.title)).append($('<div />', {
                         class: 'line2 fs-14 c-666 mb-2',
                     }).text(item.description))
@@ -109,7 +110,7 @@
                             $(this).find('span').removeClass('c-007').addClass('c-666')
 
                         },
-                    ))
+                    )))
                 })
 
                 // pages

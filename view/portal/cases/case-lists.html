@@ -1,0 +1,22 @@
+{extend name="public/index" /}
+
+{block name="main"}
+<div class="banner wow fadeIn">
+    <img src="__STATIC__/portal/imgs/banner/case.png" alt="Logo" class="img-fluid">
+</div>
+
+<div class="container mb-5">
+    <div class="fs-1 py-lg-3 my-5 text-center">运营案例列表</div>
+
+    <div class="container list-container"></div>
+</div>
+{/block}
+
+{block name="script"}
+<script src="__STATIC__/portal/js/list.js"></script>
+<script type="text/javascript">
+    $(function () {
+        new List().init()
+    });
+</script>
+{/block}
