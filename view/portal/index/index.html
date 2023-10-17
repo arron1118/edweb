@@ -6,7 +6,7 @@
 <div id="carouselExampleCaptions" class="carousel slide home-banner wow fadeIn" data-bs-ride="carousel">
     <div class="carousel-inner">
         {foreach $carousel as $key => $val}
-        <div class="carousel-item {if $key === 0}active{/if}">
+        <div class="carousel-item {if $key === 0}active{/if}" data-bs-interval="3000">
             <img src="{$val.img}" class="d-block w-100 h-auto" alt="" style=" max-height: 1095px">
         </div>
         {/foreach}
