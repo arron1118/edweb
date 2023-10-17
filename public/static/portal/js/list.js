@@ -67,7 +67,7 @@
         })
     }
 
-    List.prototype.getCasesList = function (cate_id, page = 1, limit = 6) {
+    List.prototype.getCasesList = function (cate_id, page = 1, limit = 12) {
         let _self = this
         $.get(_self.CONFIG.LIST_URL, {cate_id: cate_id, page: page, limit: limit}, function (cases) {
             if (cases.data.length > 0) {
