@@ -5,8 +5,6 @@
     .infos-content img {
         max-width: 100%;
         object-fit: contain;
-        margin: 0 auto;
-        display: block;
     }
 </style>
 {if $carousel}
@@ -19,7 +17,7 @@
         {$info.title}
     </div>
     <hr class="bg-light mb-5" />
-    <div class="infos-content mb-5">
+    <div class="infos-content mb-5 overflow-hidden">
         {:htmlspecialchars_decode($info.content)}
     </div>
 </div>

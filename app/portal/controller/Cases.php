@@ -78,6 +78,12 @@ class Cases extends PortalController
     public function info($id)
     {
         $info = $this->model::find($id);
+
+        if ($info) {
+            ++$info->view_count;
+            $info->save();
+        }
+
         $this->view->assign([
             'info' => $info,
             'title' => $info['title'],
