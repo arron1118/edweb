@@ -102,11 +102,11 @@
                             class: 'fs-14 c-666',
                             text: '了解更多 +',
                         }))).hover(function () {
-                            $(this).find('a').addClass('c-007').removeClass('c-15');
+                            $(this).find('.line1').addClass('c-007').removeClass('c-15');
                             $(this).find('span').addClass('c-007').removeClass('c-666')
                         },
                         function () {
-                            $(this).find('a').removeClass('c-007').addClass('c-15');
+                            $(this).find('.line1').removeClass('c-007').addClass('c-15');
                             $(this).find('span').removeClass('c-007').addClass('c-666')
 
                         },
@@ -138,7 +138,29 @@
                     }
                     ul.append(prevPage)
 
-                    for (let i = 1; i <= p; i++) {
+                    // 只显示 10 个页码
+                    let a = 1, b = 10
+                    if (p > 10 && page > 5) {
+                        if (page === p) {
+                            a = page - 9
+                        } else {
+                            a = page - 5;
+                        }
+
+                        b = page + 4
+                        if (b > p) {
+                            b = p
+                        }
+                    }
+
+                    let c = b - a
+                    if (c < 9) {
+                        a -= 9 - c
+                    }
+
+                    b = b > p ? p : b
+
+                    for (let i = a; i <= b; i++) {
                         ul.append($('<li />', {
                             class: 'page-item ' + (i === page ? 'active' : ''),
                         }).append($('<a />', {
@@ -146,7 +168,7 @@
                             href: 'javascript:()',
                         }).text(i).on('click', function () {
                             _self.getCasesList(cate_id, i)
-                        })))
+                        })));
                     }
 
                     let nextPage = $('<li />', {
