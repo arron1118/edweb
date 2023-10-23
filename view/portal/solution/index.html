@@ -22,21 +22,50 @@
     </div>
 </div>
 
-<!--<div class="pages my-5 py-5">-->
-<!--    <ul class="pagination justify-content-center">-->
-<!--        <li class="page-item"><a class="page-link" href="javascript:void(0);">首页</a></li>-->
-<!--        <li class="page-item"><a class="page-link" href="javascript:void(0);">上一页</a></li>-->
-<!--        <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>-->
-<!--        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>-->
-<!--        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>-->
-<!--        <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>-->
-<!--        <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>-->
-<!--        <li class="page-item"><a class="page-link" href="javascript:void(0);">6</a></li>-->
-<!--        <li class="page-item"><a class="page-link" href="javascript:void(0);">下一页</a></li>-->
-<!--        <li class="page-item"><a class="page-link" href="javascript:void(0);">尾页</a></li>-->
+{php}
+$a = 1;
+$b = 10;
+if ($pages > 1) {
+    if ($pages > 10 && $page > 5) {
+        if ($page === $pages) {
+            $a = $page - 9;
+        } else {
+            $a = $page - 5;
+        }
 
-<!--    </ul>-->
-<!--</div>-->
+        $b = $page + 4;
+        if ($b > $pages) {
+            $b = $pages;
+        }
+    }
+
+    $c = $b - $a;
+    if ($c < 9) {
+        $a -= 9 - c;
+    }
+    $b = $b > $pages ? $pages : $b;
+{/php}
+
+<div class="pages my-5 py-5">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link {if $page === 1}disabled{/if}" href="/Solution/index/page/1">首页</a></li>
+        <li class="page-item"><a class="page-link {if $page === 1}disabled{/if}" href="/Solution/index/page/{$page - 1}">上一页</a></li>
+        {php}
+        for ($i = $a; $i <= $b; $i++) {
+        {/php}
+        <li class="page-item {if ($i === $page)}active{/if}"><a class="page-link" href="/Solution/index/page/{$i}">{$i}</a></li>
+        {php}
+        }
+        {/php}
+        <li class="page-item"><a class="page-link {if $page === $pages}disabled{/if}" href="/Solution/index/page/{$page + 1}">下一页</a></li>
+        <li class="page-item"><a class="page-link {if $page === $pages}disabled{/if}" href="/Solution/index/page/{$pages}">尾页</a></li>
+
+    </ul>
+</div>
+
+{php}
+}
+{/php}
 {/block}
 
 {block name="script"}

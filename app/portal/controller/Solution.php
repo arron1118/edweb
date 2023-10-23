@@ -13,7 +13,7 @@ class Solution extends PortalController
 {
     protected string $title = '行业解决方案';
 
-    protected int $limit = 2;
+    protected int $limit = 12;
 
     public function initialize(): void
     {
@@ -37,12 +37,31 @@ class Solution extends PortalController
 
     public function index()
     {
-        $list = $this->model::where([
-            'status' => 1,
-        ])->paginate(10);
+        $page = $this->request->param('page/d', 1);
+        $limit = $this->request->param('limit/d', $this->limit);
+
+        $total = $this->model::where([
+            'status' => 1
+        ])->count();
+
+        $pages = ceil($total / $limit);
+        if ($page > $pages) {
+            $page = 1;
+        }
+
+        $cases = $this->model::field('id, title, cover_img, description')
+            ->where([
+                'status' => 1,
+            ])->order('is_top desc, sort desc, id desc')
+            ->limit(($page - 1) * $limit, $limit)
+            ->select();
 
         $this->view->assign([
-            'list' => $list,
+            'list' => $cases,
+            'total' => $total,
+            'limit' => $limit,
+            'page' => $page,
+            'pages' => $pages,
         ]);
 
         return $this->view->fetch();
