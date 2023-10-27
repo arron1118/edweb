@@ -44,7 +44,7 @@ class Solution extends PortalController
             'status' => 1
         ])->count();
 
-        $pages = ceil($total / $limit);
+        $pages = (int) ceil($total / $limit);
         if ($page > $pages) {
             $page = 1;
         }
