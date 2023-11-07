@@ -21,7 +21,7 @@ class Solution extends PortalController
 
         $this->model = Share::class;
         $action = $this->app->request->action();
-        $cate = $action === 'info' ? 6 : 4;
+        $cate = $action === 'info' ? 9 : 4;
 
         $carousel = Carousel::field('id, img, url, content')->where([
             'status' => 1,

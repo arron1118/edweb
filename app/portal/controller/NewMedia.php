@@ -21,7 +21,7 @@ class NewMedia extends PortalController
         $this->model = ShareModel::class;
 
         $action = $this->app->request->action();
-        $cate = $action === 'info' ? 6 : 4;
+        $cate = $action === 'info' ? 9 : 3;
 
         $carousel = Carousel::field('id, img, url, content')->where([
             'status' => 1,

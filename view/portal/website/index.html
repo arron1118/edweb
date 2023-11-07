@@ -1,9 +1,15 @@
 {extend name="public/index" /}
 
 {block name="main"}
+{if $carousel}
+<div class="banner wow fadeIn" data-wow-delay="0">
+    <img src="{$carousel.img}" alt="" class="img-fluid">
+</div>
+{else /}
 <div class="banner wow fadeIn">
     <img src="__STATIC__/portal/imgs/banner/website.png" alt="Logo" class="img-fluid">
 </div>
+{/if}
 <div class="container mb-5 pb-5">
     <div class="module2-title my-5 text-center fs-1">定制网站类型</div>
     <div class="row row-cols-1 row-cols-lg-2  align-items-center bgc-f7 mb-5 ">

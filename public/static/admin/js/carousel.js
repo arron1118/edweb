@@ -28,7 +28,8 @@ define(["jquery", "easy-admin"], function ($, ea) {
                             5: '案例鉴赏',
                             6: 'Tiktok运营',
                             7: '网站建设',
-                            8: '关于我们'
+                            8: '关于我们',
+                            9: '详情页'
                         }, title: '栏目ID'
                     },
                     {field: 'img', title: '图片', templet: ea.table.image},

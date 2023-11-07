@@ -1,10 +1,15 @@
 {extend name="public/index" /}
 
 {block name="main"}
+{if $carousel}
+<div class="banner wow fadeIn" data-wow-delay="0">
+    <img src="{$carousel.img}" alt="" class="img-fluid">
+</div>
+{else /}
 <div class="banner wow fadeIn">
     <img src="__STATIC__/portal/imgs/banner/tiktok.png" alt="Logo" class="img-fluid">
 </div>
-
+{/if}
 <div class="module-1">
     <div class="container">
         <div class="fs-1 c-fff py-3 py-lg-5 text-center">服务的核心价值</div>

@@ -20,7 +20,7 @@ class Cases extends PortalController
         $this->model = \app\admin\model\Cases::class;
 
         $action = $this->app->request->action();
-        $cate = $action === 'info' ? 6 : 3;
+        $cate = $action === 'info' ? 9 : 5;
 
         $carousel = Carousel::field('id, img, url, content')->where([
             'status' => 1,

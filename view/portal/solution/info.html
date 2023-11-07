@@ -1,9 +1,15 @@
 {extend name="public/index" /}
 
 {block name="main"}
+{if $carousel}
+<div class="banner mb-5 wow fadeIn" data-wow-delay="0">
+  <img src="{$carousel.img}" alt="" class="img-fluid">
+</div>
+{else /}
 <div class="banner">
   <img src="__STATIC__/portal/imgs/banner/solution.png" alt="Logo" class="img-fluid">
 </div>
+{/if}
 <div class="container c-60">
   <div class="fs-1 mt-5 mb-3  my-lg-5 text-center line1">
     机械行业全网营销解决方案

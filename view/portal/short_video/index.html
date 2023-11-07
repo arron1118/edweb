@@ -1,6 +1,11 @@
 {extend name="public/index" /}
 
 {block name="main"}
+{if $carousel}
+<div class="banner mb-lg-5 wow fadeIn" data-wow-delay="0">
+    <img src="{$carousel.img}" alt="" class="img-fluid">
+</div>
+{else /}
 <div class="fp-section py-lg-5" style="background-image:  url('__STATIC__/portal/imgs/banner/shortvideo2.png');
     background-repeat: no-repeat;background-size: 100% 100%;background-position: center center;
 height: 100%; overflow: hidden;
@@ -28,6 +33,7 @@ height: 100%; overflow: hidden;
         </div>
     </div>
 </div>
+{/if}
 <div class="container mb-5">
     <div class="fs-1 py-lg-3 my-5 text-center">做短视频你是否面临以下问题？</div>
     <div class="row justify-content-center">

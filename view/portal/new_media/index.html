@@ -1,9 +1,15 @@
 {extend name="public/index" /}
 
 {block name="main"}
+{if $carousel}
+<div class="banner wow fadeIn" data-wow-delay="0">
+    <img src="{$carousel.img}" alt="" class="img-fluid">
+</div>
+{else /}
 <div class="banner wow fadeIn">
     <img src="__STATIC__/portal/imgs/banner/newMedia.png" alt="Logo" class="img-fluid">
 </div>
+{/if}
 <div class="container mb-5">
     <div class="fs-1 pt-3 mt-3 mt-lg-5 mb-3 text-center">不重视新媒体营销最终都会被时代所淘汰！</div>
     <div class="module2-sub-title pb-5 mb-3 mb-lg-5 text-center">我们的日常活动、购物、旅游出行、游戏娱乐都离不开手机。</div>

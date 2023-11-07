@@ -16,7 +16,7 @@ class Tiktok extends PortalController
 
         $carousel = Carousel::field('id, img, url, content')->where([
             'status' => 1,
-            'cate_id' => 5,
+            'cate_id' => 6,
         ])->order('sort asc, id desc')
             ->limit(1)
             ->select();
