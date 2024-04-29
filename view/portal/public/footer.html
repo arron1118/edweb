@@ -36,3 +36,62 @@
         </p>
     </div>
 </div>
+
+<!--回到顶部-->
+<div class="list-group side-tool position-fixed shadow zindex-fixed text-center" style="bottom: 10%; right: 2px; width: 80px;">
+    <a href="javascript:;" class="list-group-item position-relative app-phone p-2 bg-secondary-subtle" title="微信咨询">
+        <i class="fa-brands fa-weixin fs-4 text-danger"></i>
+        <div class="title text-primary p-1" style="font-size: 12px">微信咨询</div>
+        <div class="app-download-content zindex-fixed bg-white position-absolute overflow-hidden text-center p-2 shadow" style=" color: #666; border: 1px solid #ddd; height: 200px; width: 170px; top: 0; right: 80px;">
+            <img src="__STATIC__/portal/imgs/wechat.png" class="m-0" style="width: 160px; height: 160px;"/>
+            <div style="line-height: 20px;">微信扫码咨询</div>
+        </div>
+    </a>
+    <a class="list-group-item p-2 app-phone" href="javascript:;" title="电话咨询">
+        <i class="fa-solid fa-phone fs-5 text-success"></i>
+        <div class="title p-1" style="font-size: 12px;">电话咨询</div>
+        <div class="app-download-content d-none zindex-fixed bg-white position-absolute overflow-hidden text-center p-2 shadow" style=" color: #666; border: 1px solid #ddd; height: 60px; width: 170px; top: 0; right: 80px;">
+            <div style="line-height: 40px; ">
+                <i class="fa-solid fa-phone fs-6 text-success"></i>
+                <span class="ms-1 fs-6">13630017240</span>
+            </div>
+        </div>
+    </a>
+    <a class="list-group-item lqp-top p-2" href="#top" title="回到顶部">
+        <i class="fa-solid fa-angles-up fs-5 text-primary"></i>
+        <div class="title p-1" style="font-size: 12px;">回到顶部</div>
+    </a>
+</div>
+
+<script>
+    $('.side-tool > .list-group-item').hover(function () {
+        $(this).addClass('bg-secondary-subtle')
+        $(this).find('.title').addClass('text-primary')
+    }, function () {
+        $(this).removeClass('bg-secondary-subtle')
+        $(this).find('.title').removeClass('text-primary')
+    });
+    $('.app-phone').hover(function(){
+        $(this).find('.app-download-content').removeClass('d-none');
+    }, function() {
+        $(this).find('.app-download-content').addClass('d-none');
+    })
+    //监听滚动条位置
+    let scrollBar = function () {
+        let scroll_top = 0;
+        if (document.documentElement && document.documentElement.scrollTop) {
+            scroll_top = document.documentElement.scrollTop;
+        } else if (document.body) {
+            scroll_top = document.body.scrollTop;
+        }
+        if (scroll_top > 800) {
+            $('.lqp-top').removeClass('d-none');
+        } else {
+            $('.lqp-top').addClass('d-none');
+        }
+    }
+    scrollBar();
+    $(window).scroll(function () {
+        scrollBar();
+    });
+</script>

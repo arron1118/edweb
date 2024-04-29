@@ -22,7 +22,7 @@ require.config({
         "autocomplete": ["plugs/lay-module/autocomplete/autocomplete"],
         "vue": ["plugs/vue-2.6.10/vue.min"],
         "ckeditor": ["plugs/ckeditor/ckeditor"],
-        "bootstrap": ["plugs/bootstrap-5.2.3/js/bootstrap.bundle.min"]
+        "bootstrap": ["plugs/bootstrap/js/bootstrap.bundle.min"]
     }
 });
 
